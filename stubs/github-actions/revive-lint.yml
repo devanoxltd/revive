@@ -1,0 +1,17 @@
+name: Revive Lint
+
+on:
+    push:
+        branches: [ YOUR_BRANCH_NAME ]
+    pull_request:
+
+jobs:
+  revive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Revive Lint"
+        uses: devanoxLtd/revive-action@v2
+        with:
+          args: lint
