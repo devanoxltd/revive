@@ -30,7 +30,7 @@
         "friendsofphp/php-cs-fixer": "^v3.20",
         "laravel-zero/framework": "^v10.1",
         "laravel/pint": "^v1.10",
-        "mrchetan/php_standard": "^3.2",
+        "mrchetan/php_standard": "^4.0",
         "nunomaduro/larastan": "^2.6",
         "nunomaduro/termwind": "^v1.15",
         "spatie/invade": "^1.1",

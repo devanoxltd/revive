@@ -6,7 +6,7 @@
         "friendsofphp/php-cs-fixer": "^3.20",
         "laravel-zero/framework": "^10.1",
         "laravel/pint": "^1.10",
-        "mrchetan/php_standard": "^3.2",
+        "mrchetan/php_standard": "^4.0",
         "nunomaduro/larastan": "^2.6",
         "nunomaduro/termwind": "^1.15",
         "pestphp/pest": "^1.21.3",
