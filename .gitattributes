@@ -13,7 +13,6 @@
 /composer-dev.json export-ignore
 /CONTRIBUTING.md export-ignore
 /revive export-ignore
-/revive.json export-ignore
 /phpstan.neon export-ignore
 /phpunit.xml.dist export-ignore
 /README.md export-ignore
