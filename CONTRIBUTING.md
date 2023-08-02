@@ -33,5 +33,5 @@ If the project maintainer has any additional requirements, you will find them li
 When working locally you will need to install the dev dependencies.
 
 ```bash
-COMPOSER=composer-dev.json composer install
+composer install
 ```
