@@ -9,7 +9,7 @@
         "laravel"
     ],
     "homepage": "https://github.com/devanoxLtd/laravel-revive",
-    "type": "project",
+    "type": "package",
     "license": "MIT",
     "support": {
         "issues": "https://github.com/devanoxLtd/laravel-revive/issues",
