@@ -45,7 +45,7 @@ To fix everything at once:
 ./vendor/bin/revive fix
 ```
 
-To dust only files that have uncommitted changes according to Git, you may use the `--dirty` option:
+To revive only files that have uncommitted changes according to Git, you may use the `--dirty` option:
 
 ```bash
 ./vendor/bin/revive lint --dirty
