@@ -156,7 +156,7 @@ class CustomOrderedClassElementsFixer extends AbstractFixer implements Configura
         $lastPosition = is_countable($this->configuration['order']) ? count($this->configuration['order']) : 0;
 
         foreach ($this->typePosition as &$pos) {
-            if (null === $pos) {
+            if ($pos === null) {
                 $pos = $lastPosition;
             }
 
@@ -253,7 +253,7 @@ class Example
     /**
      * {@inheritdoc}
      */
-    protected function applyFix(SplFileInfo $file, Tokens $tokens): void // @codingStandardsIgnoreLine
+    protected function applyFix(SplFileInfo $file, Tokens $tokens): void
     {
         for ($i = 1, $count = $tokens->count(); $i < $count; $i++) {
             if (! $tokens[$i]->isClassy()) {
@@ -263,7 +263,7 @@ class Example
             $i = $tokens->getNextTokenOfKind($i, ['{']);
             $elements = $this->getElements($tokens, $i);
 
-            if (0 === count($elements)) {
+            if (count($elements) === 0) {
                 continue;
             }
 
@@ -321,7 +321,7 @@ class Example
                     'method_private',
                 ])
                 ->getOption(),
-            (new FixerOptionBuilder('sort_algorithm', 'How multiple occurrences of same type statements should be sorted')) // @codingStandardsIgnoreLine
+            (new FixerOptionBuilder('sort_algorithm', 'How multiple occurrences of same type statements should be sorted'))
                 ->setAllowedValues(self::SUPPORTED_SORT_ALGORITHMS)
                 ->setDefault(self::SORT_NONE)
                 ->getOption(),
@@ -376,7 +376,6 @@ class Example
                     continue;
                 }
 
-                // @codingStandardsIgnoreLine
                 if (defined('T_READONLY') && $token->isGivenKind(T_READONLY)) { // @TODO: drop condition when PHP 8.1+ is required
                     $element['readonly'] = true;
                 }
@@ -400,7 +399,7 @@ class Example
                     $element['type'] = $type;
                 }
 
-                if ('property' === $element['type']) {
+                if ($element['type'] === 'property') {
                     $element['name'] = $tokens[$i]->getContent();
                 } elseif (in_array($element['type'], [
                     'use_trait',
@@ -484,7 +483,6 @@ class Example
             $index = $tokens->findBlockEnd(Tokens::BLOCK_TYPE_CURLY_BRACE, $index);
         }
 
-        // @codingStandardsIgnoreLine
         for (++$index; $tokens[$index]->isWhitespace(" \t") || $tokens[$index]->isComment(); $index++);
 
         $index--;
@@ -534,7 +532,7 @@ class Example
                 if (isset($this->typePosition[$type])) {
                     $element['position'] = $this->typePosition[$type];
 
-                    if ('phpunit' === $type) {
+                    if ($type === 'phpunit') {
                         $element['position'] += $phpunitPositions[$element['name']];
                     }
 
@@ -604,7 +602,7 @@ class Example
     {
         $selectedSortAlgorithm = $this->configuration['sort_algorithm'];
 
-        if (self::SORT_ALPHA === $selectedSortAlgorithm) {
+        if ($selectedSortAlgorithm === self::SORT_ALPHA) {
             return strcasecmp($a['name'], $b['name']);
         }
 

@@ -73,7 +73,7 @@ class CustomControllerOrderFixer extends CustomOrderedClassElementsFixer
         }
 
         $namespace = [];
-        while (null !== $tokens->getNextMeaningfulToken($index)) {
+        while ($tokens->getNextMeaningfulToken($index) !== null) {
             $index = $tokens->getNextMeaningfulToken($index);
 
             if ($tokens[$index]->equals(';')) {
@@ -89,7 +89,7 @@ class CustomControllerOrderFixer extends CustomOrderedClassElementsFixer
 
         $index = $extendsIndex;
 
-        while (null !== $tokens->getNextMeaningfulToken($index)) {
+        while ($tokens->getNextMeaningfulToken($index) !== null) {
             $index = $tokens->getNextMeaningfulToken($index);
 
             if ($tokens[$index]->equals('{')) {

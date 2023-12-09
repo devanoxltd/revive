@@ -31,6 +31,12 @@ Optionally you can publish a GitHub Actions config:
 ./vendor/bin/revive github-actions
 ```
 
+Or you can publish Husky Hooks:
+
+```bash
+./vendor/bin/revive husky-hooks
+```
+
 ## Usage
 
 To lint everything at once:
