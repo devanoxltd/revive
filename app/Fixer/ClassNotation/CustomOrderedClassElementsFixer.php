@@ -253,7 +253,7 @@ class Example
     /**
      * {@inheritdoc}
      */
-    protected function applyFix(SplFileInfo $file, Tokens $tokens): void
+    protected function applyFix(SplFileInfo $file, Tokens $tokens): void // @codingStandardsIgnoreLine
     {
         for ($i = 1, $count = $tokens->count(); $i < $count; $i++) {
             if (! $tokens[$i]->isClassy()) {
@@ -321,7 +321,7 @@ class Example
                     'method_private',
                 ])
                 ->getOption(),
-            (new FixerOptionBuilder('sort_algorithm', 'How multiple occurrences of same type statements should be sorted'))
+            (new FixerOptionBuilder('sort_algorithm', 'How multiple occurrences of same type statements should be sorted')) // @codingStandardsIgnoreLine
                 ->setAllowedValues(self::SUPPORTED_SORT_ALGORITHMS)
                 ->setDefault(self::SORT_NONE)
                 ->getOption(),
@@ -483,7 +483,7 @@ class Example
             $index = $tokens->findBlockEnd(Tokens::BLOCK_TYPE_CURLY_BRACE, $index);
         }
 
-        for (++$index; $tokens[$index]->isWhitespace(" \t") || $tokens[$index]->isComment(); $index++);
+        for (++$index; $tokens[$index]->isWhitespace(" \t") || $tokens[$index]->isComment(); $index++); // @codingStandardsIgnoreLine
 
         $index--;
 

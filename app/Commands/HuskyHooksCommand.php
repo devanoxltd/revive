@@ -76,7 +76,7 @@ class HuskyHooksCommand extends Command
             }
         }
 
-        $process->run(function ($type, $line) {
+        $process->run(function ($type, $line) { // @codingStandardsIgnoreLine
             $this->output->write('    ' . $line);
         });
     }
