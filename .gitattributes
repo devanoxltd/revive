@@ -10,7 +10,6 @@
 /banner.png export-ignore
 /box.json export-ignore
 /composer.lock export-ignore
-/composer-dev.json export-ignore
 /CONTRIBUTING.md export-ignore
 /revive export-ignore
 /phpstan.neon export-ignore

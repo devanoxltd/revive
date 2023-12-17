@@ -1,4 +1,4 @@
-![Project Banner](./banner.png)
+![Project Banner](https://raw.githubusercontent.com/devanoxLtd/revive/main/banner.png)
 
 # Laravel Revive
 
