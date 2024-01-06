@@ -10,7 +10,6 @@
     ],
     "exclude" : [
         "tests/Fixtures",
-        "tests/Pest.php",
         "public/index.php",
         "bootstrap/app.php"
     ],
