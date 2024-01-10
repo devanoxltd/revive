@@ -93,6 +93,7 @@ class PhpCodeSniffer extends Tool
             define('PHP_CODESNIFFER_CBF', $tool === 'runPHPCBF');
         }
 
+        // @phpstan-ignore-next-line
         invade(new Config)->overriddenDefaults = [];
     }
 
