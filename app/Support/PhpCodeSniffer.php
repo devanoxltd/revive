@@ -83,6 +83,8 @@ class PhpCodeSniffer extends Tool
     }
 
     /**
+     * Config uses a private static property $overriddenDefaults
+     * which does't allow us to update the config between runs
      * we need to reset it so we can also lint in the fix command.
      */
     private function resetConfig(string $tool): void
@@ -90,6 +92,8 @@ class PhpCodeSniffer extends Tool
         if (defined('PHP_CODESNIFFER_CBF') === false) {
             define('PHP_CODESNIFFER_CBF', $tool === 'runPHPCBF');
         }
+
+        invade(new Config)->overriddenDefaults = [];
     }
 
     private function getConfigFile(): string
