@@ -1,4 +1,4 @@
-![Project Banner](https://raw.githubusercontent.com/devanoxLtd/revive/main/banner.png)
+![Project Banner](https://raw.githubusercontent.com/devanoxltd/revive/main/banner.png)
 
 # Laravel Revive
 
@@ -22,7 +22,7 @@ You can view a list of the compiled rules and examples of what they do in the [s
 You can install the package via composer:
 
 ```bash
-composer require devanox/laravel-revive --dev
+composer require devanoxltd/laravel-revive --dev
 ```
 
 Optionally you can publish a GitHub Actions config:
@@ -157,7 +157,7 @@ Create a `pint.json` file in your project root, you can use [Revive's `pint.json
 
 ## GitHub Action
 
-There's a [GitHub Action](https://github.com/devanoxLtd/revive-action) you use to clean-up your workflows.
+There's a [GitHub Action](https://github.com/devanoxltd/revive-action) you use to clean-up your workflows.
 
 >**Warning** Heads Up! Workflows that commit to your repo will stop any currently running workflows and not trigger another workflow run.
 

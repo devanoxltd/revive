@@ -47,9 +47,9 @@ class ReviveConfig
             });
         }
 
-        if (file_exists(Project::path() . '/vendor/devanox/laravel-revive/revive.json')) {
+        if (file_exists(Project::path() . '/vendor/devanoxltd/laravel-revive/revive.json')) {
             return tap(json_decode(
-                file_get_contents(Project::path() . '/vendor/devanox/laravel-revive/revive.json'),
+                file_get_contents(Project::path() . '/vendor/devanoxltd/laravel-revive/revive.json'),
                 true,
                 512,
                 JSON_THROW_ON_ERROR

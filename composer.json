@@ -1,5 +1,5 @@
 {
-    "name": "devanox/laravel-revive",
+    "name": "devanoxltd/laravel-revive",
     "description": "Automatic configuration for Laravel apps to apply Devanox's standard linting & code standards.",
     "keywords": [
         "devanox",
@@ -8,12 +8,12 @@
         "code style",
         "laravel"
     ],
-    "homepage": "https://github.com/devanoxLtd/laravel-revive",
+    "homepage": "https://github.com/devanoxltd/laravel-revive",
     "type": "package",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/devanoxLtd/laravel-revive/issues",
-        "source": "https://github.com/devanoxLtd/laravel-revive"
+        "issues": "https://github.com/devanoxltd/laravel-revive/issues",
+        "source": "https://github.com/devanoxltd/laravel-revive"
     },
     "authors": [
         {
