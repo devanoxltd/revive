@@ -25,7 +25,7 @@ class PhpCodeSniffer extends Tool
         $lint = $this->process('runPHPCS', ['-n', '--report=summary', ...$this->getPaths()]);
 
         if ($lint) {
-            $this->failure('PHP Code_Sniffer found errors that cannot be fixed automatically.');
+            $this->failure('PHP_CodeSniffer found errors that cannot be fixed automatically.');
         }
 
         return $fix || $lint ? 1 : 0;
@@ -84,7 +84,7 @@ class PhpCodeSniffer extends Tool
 
     /**
      * Config uses a private static property $overriddenDefaults
-     * which does't allow us to update the config between runs
+     * which doesn't allow us to update the config between runs
      * we need to reset it so we can also lint in the fix command.
      */
     private function resetConfig(string $tool): void
