@@ -30,7 +30,7 @@ class ReviveConfig
     }
 
     /**
-     * @return  array<string, mixed>
+     * @return array<string, mixed>
      */
     public static function loadLocal(): array
     {
@@ -65,7 +65,7 @@ class ReviveConfig
 
     /**
      * @param  array<string, array<int, string>|string>  $config
-     * @return  array<string, array<int, string>|string>
+     * @return array<string, array<int, string>|string>
      */
     public static function scopeConfigPaths(array $config): array
     {
@@ -91,7 +91,7 @@ class ReviveConfig
 
     /**
      * @param  array<int, string>  $paths
-     * @return  array<int, string>
+     * @return array<int, string>
      */
     public static function expandWildcards(array $paths): array
     {
@@ -99,7 +99,7 @@ class ReviveConfig
     }
 
     /**
-     * @return  array<int, string>
+     * @return array<int, string>
      */
     public static function globPath(string $path): array
     {
