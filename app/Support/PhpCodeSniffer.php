@@ -24,8 +24,8 @@ class PhpCodeSniffer extends Tool
 
         $lint = $this->process('runPHPCS', ['-n', '--report=summary', ...$this->getPaths()]);
 
-        if ($lint) {
-            $this->failure('PHP_CodeSniffer found errors that cannot be fixed automatically.');
+        if ($lint !== 0) {
+            $this->failure('PHP Code_Sniffer found errors that cannot be fixed automatically.');
         }
 
         return $fix || $lint ? 1 : 0;

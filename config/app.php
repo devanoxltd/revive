@@ -1,5 +1,8 @@
 <?php
 
+use App\Providers\PintServiceProvider;
+use App\Providers\ReviveServiceProvider;
+
 return [
 
     /*
@@ -67,8 +70,8 @@ return [
     */
 
     'providers' => [
-        App\Providers\ReviveServiceProvider::class,
-        App\Providers\PintServiceProvider::class,
+        ReviveServiceProvider::class,
+        PintServiceProvider::class,
     ],
 
 ];
