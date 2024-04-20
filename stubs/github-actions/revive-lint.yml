@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: "Revive Lint"
-        uses: devanoxltd/revive-action@v2
+        uses: devanoxltd/revive-action@v1
         with:
           args: lint
