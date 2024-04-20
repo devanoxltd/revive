@@ -25,7 +25,7 @@ jobs:
         with:
           args: fix
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         id: auto_commit_action
         with:
           commit_message: Revive Fix
@@ -36,7 +36,7 @@ jobs:
         if: steps.auto_commit_action.outputs.changes_detected == 'true'
         run: echo ${{ steps.auto_commit_action.outputs.commit_hash }} >> .git-blame-ignore-revs
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Ignore Revive Fix commit in git blame
           commit_user_name: GitHub Action
