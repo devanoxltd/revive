@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "82ba700c60a328b54ad5317fb40257ab",
+    "content-hash": "a38ad37854caa2e8eb1031a41d79f3a1",
     "packages": [
         {
             "name": "brick/math",
@@ -5778,16 +5778,16 @@
         },
         {
             "name": "laravel-zero/framework",
-            "version": "v11.0.0",
+            "version": "v11.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/framework.git",
-                "reference": "47d58f391a98f288c1d9c4d58689add08559a5d8"
+                "reference": "882c3064e3b89483f2e51deadb6cc71df92297cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/47d58f391a98f288c1d9c4d58689add08559a5d8",
-                "reference": "47d58f391a98f288c1d9c4d58689add08559a5d8",
+                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/882c3064e3b89483f2e51deadb6cc71df92297cf",
+                "reference": "882c3064e3b89483f2e51deadb6cc71df92297cf",
                 "shasum": ""
             },
             "require": {
@@ -5890,7 +5890,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-24T17:19:22+00:00"
+            "time": "2024-04-25T10:17:42+00:00"
         },
         {
             "name": "laravel/pint",
