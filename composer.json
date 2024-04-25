@@ -30,9 +30,9 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^v3.54.0",
-        "laravel-zero/framework": "^v10.4",
-        "laravel/pint": "^v1.15.1",
-        "nunomaduro/termwind": "^v1.15.1",
+        "laravel-zero/framework": "^v11.0.0",
+        "laravel/pint": "^v1.15.2",
+        "nunomaduro/termwind": "^v2.0.1",
         "pestphp/pest": "^v2.34.7",
         "rector/rector": "^1.0.4",
         "spatie/invade": "^1.1.1",
