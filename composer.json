@@ -25,18 +25,18 @@
     ],
     "require": {
         "php": "^8.2",
-        "larastan/larastan": "^v2.9.5",
+        "larastan/larastan": "^v2.9.7",
         "mrchetan/php_standard": "^4.0.4"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^v3.54.0",
-        "laravel-zero/framework": "^v11.0.1",
-        "laravel/pint": "^v1.15.2",
-        "nunomaduro/termwind": "^v2.0.1",
-        "pestphp/pest": "^v2.34.7",
-        "rector/rector": "^1.0.4",
-        "spatie/invade": "^1.1.1",
-        "tightenco/tlint": "^v9.3.0"
+        "friendsofphp/php-cs-fixer": "^v3.58",
+        "laravel-zero/framework": "^v11.0",
+        "laravel/pint": "^v1.16",
+        "nunomaduro/termwind": "^v2.0",
+        "pestphp/pest": "^v2.34",
+        "rector/rector": "^1.1",
+        "spatie/invade": "^1.1",
+        "tightenco/tlint": "^v9.3"
     },
     "autoload": {
         "psr-4": {

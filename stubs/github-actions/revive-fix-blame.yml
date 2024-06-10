@@ -21,7 +21,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: "Revive Fix"
-        uses: devanoxltd/revive-action@v1
+        uses: devanoxltd/revive-action@v2
         with:
           args: fix
 
