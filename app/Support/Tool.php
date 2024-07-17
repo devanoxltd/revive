@@ -8,8 +8,7 @@ abstract class Tool
 {
     public function __construct(
         protected ReviveConfig $reviveConfig,
-    ) {
-    }
+    ) {}
 
     abstract public function lint(): int;
 

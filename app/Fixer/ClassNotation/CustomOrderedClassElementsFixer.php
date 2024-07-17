@@ -383,7 +383,10 @@ Custom values:
                     'method_private',
                 ])
                 ->getOption(),
-            (new FixerOptionBuilder('sort_algorithm', 'How multiple occurrences of same type statements should be sorted.'))
+            (new FixerOptionBuilder(
+                'sort_algorithm',
+                'How multiple occurrences of same type statements should be sorted.'
+            ))
                 ->setAllowedValues(self::SUPPORTED_SORT_ALGORITHMS)
                 ->setDefault(self::SORT_NONE)
                 ->getOption(),
@@ -540,7 +543,7 @@ Custom values:
             $index = $tokens->findBlockEnd(Tokens::BLOCK_TYPE_CURLY_BRACE, $index);
         }
 
-        for (++$index; $tokens[$index]->isWhitespace(" \t") || $tokens[$index]->isComment(); $index++);
+        for (++$index; $tokens[$index]->isWhitespace(" \t") || $tokens[$index]->isComment(); $index++); // @codingStandardsIgnoreLine
 
         $index--;
 
@@ -569,7 +572,9 @@ Custom values:
         $getPositionType = function (array $element) use ($phpunitPositions): int {
             $type = $element['type'];
 
-            if (in_array($type, ['method', 'magic', 'phpunit'], true) && isset($this->typePosition["method:{$element['name']}"])) {
+            if (in_array($type, ['method', 'magic', 'phpunit'], true) &&
+                isset($this->typePosition["method:{$element['name']}"])
+            ) {
                 return $this->typePosition["method:{$element['name']}"];
             }
 
@@ -617,7 +622,7 @@ Custom values:
              * @param  array{element: _ClassElement, position: int}  $b
              * @return -1|0|1
              */
-            fn (array $a, array $b): int => ($a['position'] === $b['position']) ? $this->sortGroupElements($a['element'], $b['element']) : $a['position'] <=> $b['position'],
+            fn (array $a, array $b): int => ($a['position'] === $b['position']) ? $this->sortGroupElements($a['element'], $b['element']) : $a['position'] <=> $b['position'], // @codingStandardsIgnoreLine
         );
     }
 

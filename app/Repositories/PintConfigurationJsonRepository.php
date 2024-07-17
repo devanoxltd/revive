@@ -11,8 +11,7 @@ class PintConfigurationJsonRepository extends ConfigurationJsonRepository
         protected $path,
         protected $preset,
         protected array $exclude
-    ) {
-    }
+    ) {}
 
     /**
      * @return array<string, array<int, string>|string>
