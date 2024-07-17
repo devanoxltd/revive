@@ -33,5 +33,26 @@ If the project maintainer has any additional requirements, you will find them li
 When working locally you will need to install the dev dependencies.
 
 ```bash
-composer install
+COMPOSER=composer-dev.json composer install
+```
+
+## Dependencies
+
+To update dependencies to latest:
+
+```bash
+# Production
+composer require friendsofphp/php-cs-fixer laravel-zero/framework laravel/pint nunomaduro/termwind tightenco/tlint --dev
+composer require larastan/larastan mrchetan/php_standard
+
+# Development
+COMPOSER=composer-dev.json composer require friendsofphp/php-cs-fixer laravel-zero/framework laravel/pint nunomaduro/termwind pestphp/pest rector/rector tightenco/tlint --dev
+COMPOSER=composer-dev.json composer require larastan/larastan mrchetan/php_standard
+```
+## PHPStan
+
+If PHPStan fails locally, try increasing the memory:
+
+```bash
+./vendor/bin/phpstan analyze --memory-limit 1G
 ```

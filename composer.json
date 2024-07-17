@@ -25,25 +25,26 @@
     ],
     "require": {
         "php": "^8.2",
-        "larastan/larastan": "^v2.9.7",
-        "mrchetan/php_standard": "^4.0.4"
+        "larastan/larastan": "^2.9",
+        "mrchetan/php_standard": "^4.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^v3.58",
-        "laravel-zero/framework": "^v11.0",
-        "laravel/pint": "^v1.16",
-        "nunomaduro/termwind": "^v2.0",
-        "pestphp/pest": "^v2.34",
-        "rector/rector": "^1.1",
+        "friendsofphp/php-cs-fixer": "^3.59",
+        "laravel-zero/framework": "^11.0",
+        "laravel/pint": "^1.16",
+        "nunomaduro/termwind": "^2.0",
         "spatie/invade": "^1.1",
-        "tightenco/tlint": "^v9.3"
+        "tightenco/tlint": "^9.3"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "exclude-from-classmap": [
+            "/tests/Fixtures/*"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -74,7 +75,7 @@
             "php": "8.2.0"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "bin": ["builds/revive"]
 }
