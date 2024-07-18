@@ -40,13 +40,11 @@ class UserScript extends Tool
         $output = app()->get(OutputInterface::class);
 
         try {
-            // @codingStandardsIgnoreLine
             $process->run(fn ($type, $buffer) => $output->write($buffer));
 
             return $process->getExitCode();
         } catch (ProcessTimedOutException $e) {
-            $error = '<br />You can overwrite this timeout with the processTimeout key in your revive.json file.';
-            $this->failure($e->getMessage() . $error);
+            $this->failure($e->getMessage() . '<br />You can overwrite this timeout with the processTimeout key in your revive.json file.');
 
             return 1;
         }

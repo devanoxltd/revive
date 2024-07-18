@@ -28,8 +28,7 @@ class CustomControllerOrderFixer extends CustomOrderedClassElementsFixer
     public function isControllerClass(Tokens $tokens, int $index): bool
     {
         if (! $tokens[$index]->isGivenKind(T_NAMESPACE)) {
-            $errorMessage = 'No "T_NAMESPACE" at given index %d, got "%s".';
-            throw new LogicException(sprintf($errorMessage, $index, $tokens[$index]->getName()));
+            throw new LogicException(sprintf('No "T_NAMESPACE" at given index %d, got "%s".', $index, $tokens[$index]->getName()));
         }
 
         $extendsIndex = $tokens->getNextTokenOfKind($index, ['{', [T_EXTENDS]]);
@@ -39,9 +38,7 @@ class CustomControllerOrderFixer extends CustomOrderedClassElementsFixer
         }
 
         $namespace = [];
-        while ($tokens->getNextMeaningfulToken($index) !== null) {
-            $index = $tokens->getNextMeaningfulToken($index);
-
+        while (null !== $index = $tokens->getNextMeaningfulToken($index)) {
             if ($tokens[$index]->equals(';')) {
                 break; // end of namespace
             }
@@ -55,9 +52,7 @@ class CustomControllerOrderFixer extends CustomOrderedClassElementsFixer
 
         $index = $extendsIndex;
 
-        while ($tokens->getNextMeaningfulToken($index) !== null) {
-            $index = $tokens->getNextMeaningfulToken($index);
-
+        while (null !== $index = $tokens->getNextMeaningfulToken($index)) {
             if ($tokens[$index]->equals('{')) {
                 break; // end of class signature
             }

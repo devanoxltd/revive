@@ -24,7 +24,7 @@ trait ConfiguresForLintOrFix
                         name: 'using',
                         shortcut: 'u',
                         mode: InputOption::VALUE_REQUIRED,
-                        description: 'Lint/fix using specified (comma separated) tools: tlint,phpcodesniffer,phpcsfixer,pint', // @codingStandardsIgnoreLine
+                        description: 'Lint/fix using specified (comma separated) tools: tlint,phpcodesniffer,phpcsfixer,pint',
                     ),
                     new InputOption(
                         name: 'dirty',

@@ -318,7 +318,7 @@ Custom values:
         }
     }
 
-    protected function applyFix(SplFileInfo $file, Tokens $tokens): void // @codingStandardsIgnoreLine
+    protected function applyFix(SplFileInfo $file, Tokens $tokens): void
     {
         for ($i = 1, $count = $tokens->count(); $i < $count; $i++) {
             if (! $tokens[$i]->isClassy()) {
@@ -543,7 +543,7 @@ Custom values:
             $index = $tokens->findBlockEnd(Tokens::BLOCK_TYPE_CURLY_BRACE, $index);
         }
 
-        for (++$index; $tokens[$index]->isWhitespace(" \t") || $tokens[$index]->isComment(); $index++); // @codingStandardsIgnoreLine
+        for (++$index; $tokens[$index]->isWhitespace(" \t") || $tokens[$index]->isComment(); $index++);
 
         $index--;
 
@@ -622,7 +622,7 @@ Custom values:
              * @param  array{element: _ClassElement, position: int}  $b
              * @return -1|0|1
              */
-            fn (array $a, array $b): int => ($a['position'] === $b['position']) ? $this->sortGroupElements($a['element'], $b['element']) : $a['position'] <=> $b['position'], // @codingStandardsIgnoreLine
+            fn (array $a, array $b): int => ($a['position'] === $b['position']) ? $this->sortGroupElements($a['element'], $b['element']) : $a['position'] <=> $b['position'],
         );
     }
 

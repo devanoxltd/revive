@@ -121,7 +121,7 @@ class PhpCsFixer extends Tool
         $config = include $this->getConfigFilePath();
 
         if (! $config instanceof ConfigInterface) {
-            throw new InvalidConfigurationException("The PHP CS Fixer config file does not return a 'PhpCsFixer\ConfigInterface' instance."); // @codingStandardsIgnoreLine
+            throw new InvalidConfigurationException("The PHP CS Fixer config file does not return a 'PhpCsFixer\ConfigInterface' instance.");
         }
 
         return $config;

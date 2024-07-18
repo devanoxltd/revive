@@ -103,7 +103,7 @@ class PhpCodeSniffer extends Tool
             file_exists(Project::path() . '/phpcs.xml') => Project::path() . '/phpcs.xml',
             file_exists(Project::path() . '/.phpcs.xml.dist') => Project::path() . '/.phpcs.xml.dist',
             file_exists(Project::path() . '/phpcs.xml.dist') => Project::path() . '/phpcs.xml.dist',
-            file_exists(Project::path() . '/vendor/mrchetan/php_standard/ruleset.xml') => Project::path() . '/vendor/mrchetan/php_standard/ruleset.xml', // @codingStandardsIgnoreLine
+            file_exists(Project::path() . '/vendor/mrchetan/php_standard/ruleset.xml') => Project::path() . '/vendor/mrchetan/php_standard/ruleset.xml',
             default => 'Devanox',
         };
     }
