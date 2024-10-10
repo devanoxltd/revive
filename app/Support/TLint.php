@@ -2,10 +2,14 @@
 
 namespace App\Support;
 
+use App\Contracts\Tool;
 use Illuminate\Console\Command;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\OutputInterface;
+use Throwable;
 use Tighten\TLint\Commands\BaseCommand;
 use Tighten\TLint\Commands\FormatCommand;
 use Tighten\TLint\Commands\LintCommand;
@@ -61,6 +65,11 @@ class TLint extends Tool
             ->isEmpty();
     }
 
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws Throwable
+     * @throws NotFoundExceptionInterface
+     */
     private function executeCommandOnPath(string $path, Application $application): int
     {
         $path = '"' . str_replace('\\', '\\\\', $path) . '"';

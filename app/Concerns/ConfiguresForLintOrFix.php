@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Support;
+namespace App\Concerns;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -17,8 +17,8 @@ trait ConfiguresForLintOrFix
                     new InputArgument(
                         name: 'path',
                         mode: InputArgument::IS_ARRAY,
-                        default: [(string) getcwd()],
                         description: 'The path to lint/fix',
+                        default: [(string) getcwd()],
                     ),
                     new InputOption(
                         name: 'using',

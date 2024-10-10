@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputInterface;
 
 class ReviveServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->singleton(ReviveConfig::class, function () {
             $input = $this->app->get(InputInterface::class);

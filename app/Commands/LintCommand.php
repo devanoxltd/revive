@@ -2,8 +2,8 @@
 
 namespace App\Commands;
 
-use App\Support\ConfiguresForLintOrFix;
-use App\Support\GetsCleaner;
+use App\Concerns\ConfiguresForLintOrFix;
+use App\Concerns\GetsCleaner;
 use Exception;
 use LaravelZero\Framework\Commands\Command;
 use LaravelZero\Framework\Exceptions\ConsoleException;
@@ -30,7 +30,7 @@ class LintCommand extends Command
         } catch (Exception $exception) {
             $this->error($exception->getMessage());
 
-            return 1;
+            return Command::FAILURE;
         }
     }
 }

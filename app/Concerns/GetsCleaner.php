@@ -1,8 +1,15 @@
 <?php
 
-namespace App\Support;
+namespace App\Concerns;
 
 use App\Actions\Clean;
+use App\Contracts\Tool;
+use App\Support\ReviveConfig;
+use App\Support\PhpCodeSniffer;
+use App\Support\PhpCsFixer;
+use App\Support\Pint;
+use App\Support\TLint;
+use App\Support\UserScript;
 
 trait GetsCleaner
 {
