@@ -32,7 +32,7 @@
         "friendsofphp/php-cs-fixer": "^3.64",
         "laravel-zero/framework": "^11.0",
         "laravel/pint": "^1.18",
-        "nunomaduro/termwind": "^2.1",
+        "nunomaduro/termwind": "^2.2",
         "spatie/invade": "^1.1",
         "tightenco/tlint": "^9.3"
     },
