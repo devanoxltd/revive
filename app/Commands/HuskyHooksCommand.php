@@ -20,7 +20,7 @@ class HuskyHooksCommand extends Command
      */
     public function handle(): int
     {
-        $exec = match($this->option('env')) {
+        $exec = match ($this->option('env')) {
             'ddev' => 'ddev exec ',
             'lando' => 'lando ',
             'warden' => 'warden env exec ',
