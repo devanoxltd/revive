@@ -42,10 +42,10 @@ To update dependencies to latest:
 
 ```bash
 # Production
-composer require friendsofphp/php-cs-fixer laravel/pint squizlabs/php_codesniffer tightenco/tlint --dev
+composer require friendsofphp/php-cs-fixer laravel-zero/framework laravel/pint squizlabs/php_codesniffer tightenco/tlint --dev
 
 # Development
-COMPOSER=composer-dev.json composer require friendsofphp/php-cs-fixer laravel/pint squizlabs/php_codesniffer tightenco/tlint  --dev
+COMPOSER=composer-dev.json composer require friendsofphp/php-cs-fixer laravel-zero/framework laravel/pint squizlabs/php_codesniffer tightenco/tlint  --dev
 ```
 
 ## PHPStan
