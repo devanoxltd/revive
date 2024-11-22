@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef9ea373d47249c75c9ce88f0227f9cd",
+    "content-hash": "a4c6bcb8755c232a36ae99bab90eee3d",
     "packages": [],
     "packages-dev": [
         {
@@ -2306,16 +2306,16 @@
         },
         {
             "name": "laravel-zero/framework",
-            "version": "v11.0.1",
+            "version": "v11.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/framework.git",
-                "reference": "882c3064e3b89483f2e51deadb6cc71df92297cf"
+                "reference": "f9b77723c5d893c35548cf018ce7a25e75a86c69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/882c3064e3b89483f2e51deadb6cc71df92297cf",
-                "reference": "882c3064e3b89483f2e51deadb6cc71df92297cf",
+                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/f9b77723c5d893c35548cf018ce7a25e75a86c69",
+                "reference": "f9b77723c5d893c35548cf018ce7a25e75a86c69",
                 "shasum": ""
             },
             "require": {
@@ -2334,7 +2334,7 @@
                 "illuminate/support": "^11.5.0",
                 "illuminate/testing": "^11.5.0",
                 "laravel-zero/foundation": "^11.5.0",
-                "laravel/prompts": "^0.1.20",
+                "laravel/prompts": "^0.1.20 || ^0.2 || ^0.3",
                 "league/flysystem": "^3.27.0",
                 "nunomaduro/collision": "^8.1.1",
                 "nunomaduro/laravel-console-summary": "^1.12.1",
@@ -2418,20 +2418,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-25T10:17:42+00:00"
+            "time": "2024-10-08T13:59:03+00:00"
         },
         {
             "name": "laravel/pint",
-            "version": "v1.18.1",
+            "version": "v1.18.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/pint.git",
-                "reference": "35c00c05ec43e6b46d295efc0f4386ceb30d50d9"
+                "reference": "f55daaf7eb6c2f49ddf6702fb42e3091c64d8a64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/35c00c05ec43e6b46d295efc0f4386ceb30d50d9",
-                "reference": "35c00c05ec43e6b46d295efc0f4386ceb30d50d9",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/f55daaf7eb6c2f49ddf6702fb42e3091c64d8a64",
+                "reference": "f55daaf7eb6c2f49ddf6702fb42e3091c64d8a64",
                 "shasum": ""
             },
             "require": {
@@ -2484,7 +2484,7 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
-            "time": "2024-09-24T17:22:50+00:00"
+            "time": "2024-11-20T09:33:46+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -4652,16 +4652,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.10.3",
+            "version": "3.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "62d32998e820bddc40f99f8251958aed187a5c9c"
+                "reference": "19473c30efe4f7b3cd42522d0b2e6e7f243c6f87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/62d32998e820bddc40f99f8251958aed187a5c9c",
-                "reference": "62d32998e820bddc40f99f8251958aed187a5c9c",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/19473c30efe4f7b3cd42522d0b2e6e7f243c6f87",
+                "reference": "19473c30efe4f7b3cd42522d0b2e6e7f243c6f87",
                 "shasum": ""
             },
             "require": {
@@ -4728,7 +4728,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-09-18T10:38:58+00:00"
+            "time": "2024-11-16T12:02:36+00:00"
         },
         {
             "name": "symfony/clock",
