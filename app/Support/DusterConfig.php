@@ -14,6 +14,22 @@ class DusterConfig
     /**
      * @var array<int, string>
      */
+    public static array $defaultExclude = [
+        '_ide_helper_actions.php',
+        '_ide_helper_models.php',
+        '_ide_helper.php',
+        '.phpstorm.meta.php',
+        'bootstrap/cache',
+        'build',
+        'node_modules',
+        'storage',
+        'tests/Pest.php',
+        'vendor',
+    ];
+
+    /**
+     * @var array<int, string>
+     */
     public static array $phpSuffixes = [
         '.php',
         '.php.inc',
@@ -38,19 +54,14 @@ class DusterConfig
     {
         $config['include'] = static::expandWildcards($config['include'] ?? []);
 
+        $filteredExcludes = collect($config['exclude'] ?? [])
+            ->reject(fn ($path) => in_array($path, static::$defaultExclude))
+            ->reject(fn ($path) => Str::contains($path, ['node_modules', 'vendor']))
+            ->toArray();
+
         $config['exclude'] = array_merge(
-            static::expandWildcards($config['exclude'] ?? []),
-            [
-                '_ide_helper_actions.php',
-                '_ide_helper_models.php',
-                '_ide_helper.php',
-                '.phpstorm.meta.php',
-                'bootstrap/cache',
-                'build',
-                'node_modules',
-                'storage',
-                'tests/Pest.php',
-            ]
+            static::expandWildcards($filteredExcludes),
+            static::$defaultExclude
         );
 
         return $config;
