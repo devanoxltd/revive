@@ -11,7 +11,6 @@ use Symfony\Component\Finder\Finder;
 
 class DusterConfig
 {
-
     /**
      * @var array<int, string>
      */
