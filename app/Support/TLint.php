@@ -8,6 +8,7 @@ use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Throwable;
 use Tighten\TLint\Commands\BaseCommand;
@@ -58,10 +59,17 @@ class TLint extends Tool
         $application->add($tlintCommand);
         $application->setAutoExit(false);
 
-        return collect($this->dusterConfig->get('paths'))
+        $errors = collect($this->dusterConfig->get('paths'))
             ->map(fn ($path) => $this->executeCommandOnPath($path, $application))
-            ->filter()
-            ->isEmpty();
+            ->filter();
+
+        if ($errors->isEmpty()) {
+            $this->success('No issues found.');
+
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -75,9 +83,17 @@ class TLint extends Tool
 
         $command = $application->has('lint') ? 'lint' : 'format';
 
-        return $application->run(
+        $output = new BufferedOutput;
+
+        $exitCode = $application->run(
             new StringInput("{$command} {$path}"),
-            app()->get(OutputInterface::class)
+            $output
         );
+
+        if ($exitCode !== 0) {
+            app()->make(OutputInterface::class)->write($output->fetch());
+        }
+
+        return $exitCode;
     }
 }
