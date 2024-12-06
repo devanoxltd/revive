@@ -1,7 +1,7 @@
 # Release Instructions
 
 1. Visit the [Duster Releases page](https://github.com/tighten/duster/releases); figure out what your next tag will be (increase the third number if it's a patch or fix; increase the second number if it's adding features)
-2. On your local machine, pull down the latest changes on the `2.x` branch (`git checkout 2.x && git pull`)
+2. On your local machine, pull down the latest changes on the `3.x` branch (`git checkout 3.x && git pull`)
 3. Update the version in [`config/app.php`](./config/app.php)
 4. Update dependencies and remove dev dependencies by running `composer update`
 5. Compile the binary
