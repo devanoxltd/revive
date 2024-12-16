@@ -11,7 +11,7 @@ class HuskyHooksCommand extends Command
 {
     use CommandHelpers;
 
-    protected $signature = 'husky-hooks';
+    protected $signature = 'husky-hooks {--env= : Development environment (ddev, lando, warden, sail)}';
 
     protected $description = 'Publish Husky Hooks';
 
@@ -20,6 +20,14 @@ class HuskyHooksCommand extends Command
      */
     public function handle(): int
     {
+        $exec = match ($this->option('env')) {
+            'ddev' => 'ddev exec ',
+            'lando' => 'lando ',
+            'warden' => 'warden env exec ',
+            'sail' => 'sail exec ',
+            default => '',
+        };
+
         $choices = [
             'Lint only' => 'lint',
             'Fix and commit' => 'fix',
@@ -34,11 +42,11 @@ class HuskyHooksCommand extends Command
         $this->runCommands(['git init']);
 
         if (! file_exists(base_path('node_modules/husky'))) {
-            $this->runCommands(['npx husky-init']);
+            $this->runCommands([$exec . 'npx husky-init']);
         }
 
         if (! file_exists(base_path('node_modules/lint-staged'))) {
-            $this->runCommands(['npm install lint-staged --save-dev']);
+            $this->runCommands([$exec . 'npm install lint-staged --save-dev']);
         }
 
         $preCommit = file_get_contents(__DIR__ . '/../../stubs/husky-hooks/pre-commit');
@@ -53,7 +61,7 @@ class HuskyHooksCommand extends Command
 
         file_put_contents(getcwd() . '/lint-staged.config.js', $lintStaged);
 
-        $this->runCommands(["npx husky add ./.husky/pre-commit 'npx --no-install lint-staged'"]);
+        $this->runCommands(["npx husky add ./.husky/pre-commit '{$exec}npx --no-install lint-staged'"]);
 
         $this->success('Husky Pre-Commit Git Hook added');
 

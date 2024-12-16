@@ -37,6 +37,14 @@ Or you can publish Husky Hooks:
 ./vendor/bin/revive husky-hooks
 ```
 
+If you are using a containerized environment and do not have PHP installed locally, you can use the `--env` option to specify it:
+
+```bash
+./vendor/bin/revive husky-hooks --env=ddev
+```
+
+Supported environments are `ddev`, `warden` `lando`, and `sail`.
+
 ## Usage
 
 To lint everything at once:

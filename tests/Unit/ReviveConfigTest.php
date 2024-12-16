@@ -30,6 +30,7 @@ it('provides default exclude config values', function () {
         'node_modules',
         'storage',
         'tests/Pest.php',
+        'vendor',
     ]);
 });
 
@@ -53,5 +54,6 @@ it('merges provided exclude with default exclude config values', function () {
         'node_modules',
         'storage',
         'tests/Pest.php',
+        'vendor',
     ]);
 });

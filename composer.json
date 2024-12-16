@@ -25,16 +25,16 @@
     ],
     "require": {
         "php": "^8.2",
-        "larastan/larastan": "^2.9",
-        "mrchetan/php_standard": "^4.1"
+        "larastan/larastan": "^v3.0",
+        "mrchetan/php_standard": "^4.2"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.64",
+        "friendsofphp/php-cs-fixer": "^3.65",
         "laravel-zero/framework": "^11.0",
         "laravel/pint": "^1.18",
-        "nunomaduro/termwind": "^2.2",
+        "nunomaduro/termwind": "^2.3",
         "spatie/invade": "^1.1",
-        "tightenco/tlint": "^9.3"
+        "tightenco/tlint": "^9.4"
     },
     "autoload": {
         "psr-4": {
