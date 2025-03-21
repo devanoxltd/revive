@@ -55,7 +55,7 @@ it('lints with PHP_CodeSniffer', function () {
     expect($statusCode)->toBe(1)
         ->and($output)
         ->toContain('Linting using PHP_CodeSniffer')
-        ->toContain('Class name doesn\'t match filename');
+        ->toContain('Filename doesn\'t match class name');
 });
 
 it('only lints with PHP_CodeSniffer', function () {
@@ -67,7 +67,7 @@ it('only lints with PHP_CodeSniffer', function () {
     expect($statusCode)->toBe(1)
         ->and($output)
         ->toContain('Linting using PHP_CodeSniffer')
-        ->toContain('Class name doesn\'t match filename')
+        ->toContain('Filename doesn\'t match class name')
         ->not->toContain('Linting using TLint')
         ->not->toContain('Linting using PHP CS Fixer')
         ->not->toContain('Linting using Pint');
