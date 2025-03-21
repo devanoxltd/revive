@@ -38,6 +38,11 @@ $app->singleton(
     Illuminate\Foundation\Exceptions\Handler::class
 );
 
+$app->singleton(
+    Illuminate\Foundation\Bootstrap\HandleExceptions::class,
+    App\Exceptions\HandleExceptions::class
+);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
