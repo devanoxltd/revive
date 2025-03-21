@@ -31,6 +31,11 @@ trait ConfiguresForLintOrFix
                         mode: InputOption::VALUE_NONE,
                         description: 'Only lint/fix files that have uncommitted changes'
                     ),
+                    new InputOption(
+                        name: 'diff',
+                        mode: InputOption::VALUE_REQUIRED,
+                        description: 'Only fix files that have changed since branching off from the given branch',
+                    ),
                 ]
             );
     }
