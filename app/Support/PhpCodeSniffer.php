@@ -74,6 +74,10 @@ class PhpCodeSniffer extends Tool
      */
     private function getPaths(): array
     {
+        if ($this->getConfigFile() !== 'Tighten') {
+            return [];
+        }
+
         return $this->dusterConfig->get('paths') === [Project::path()]
             ? $this->getDefaultDirectories() : $this->dusterConfig->get('paths');
     }
