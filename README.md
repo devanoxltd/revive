@@ -99,7 +99,7 @@ If you need to include or exclude files or directories for each tool you can cre
         "tests"
     ],
     "exclude": [
-        "tests/fixtures"
+        "tests/fixtures",
         "**/folderToExclude/**"
     ]
 }
