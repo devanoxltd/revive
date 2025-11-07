@@ -1,9 +1,9 @@
 name: tests
 
 on:
-    push:
-        branches: [ 3.x ]
-    pull_request:
+  push:
+    branches: [3.x]
+  pull_request:
 
 jobs:
   tests:
@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-22.04, windows-2019]
+        os: [ubuntu-22.04, windows-2022]
         php: [8.2, 8.3]
 
     name: PHP ${{ matrix.php }} - ${{ matrix.os }}
