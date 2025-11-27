@@ -39,8 +39,6 @@ class PhpCodeSniffer extends Tool
     {
         $serverArgv = $_SERVER['argv'];
 
-        $this->installDevanoxCodingStandard();
-
         $ignore = $this->reviveConfig->get('exclude')
             ? ['--ignore=' . implode(',', $this->reviveConfig->get('exclude'))]
             : [];
@@ -53,6 +51,7 @@ class PhpCodeSniffer extends Tool
         ];
 
         $this->resetConfig($tool);
+        $this->installDevanoxCodingStandard();
 
         $runner = new Runner;
 
@@ -84,7 +83,7 @@ class PhpCodeSniffer extends Tool
 
     private function installDevanoxCodingStandard(): void
     {
-        Config::setConfigData('installed_paths', base_path('standards/Devanox'), true);
+        (new Config)->setConfigData('installed_paths', base_path('standards/Devanox'), true);
     }
 
     /**
