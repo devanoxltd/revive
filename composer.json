@@ -30,17 +30,17 @@
         }
     ],
     "require": {
-        "php": "^8.2.0"
+        "php": "^8.3"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.90",
         "larastan/larastan": "^3.8",
-        "laravel-zero/framework": "^11.45",
+        "laravel-zero/framework": "^12.0",
         "laravel/pint": "^1.26",
-        "mrchetan/php_standard": "^5.1",
+        "mrchetan/php_standard": "^5.2",
         "nunomaduro/termwind": "^2.3",
-        "spatie/invade": "^1.1",
-        "squizlabs/php_codesniffer": "^3.13",
+        "spatie/invade": "^2.1",
+        "squizlabs/php_codesniffer": "^4.0",
         "tightenco/tlint": "^9.5"
     },
     "autoload": {
@@ -71,7 +71,7 @@
             "pestphp/pest-plugin": true
         },
         "platform": {
-            "php": "8.2.0"
+            "php": "8.3.0"
         }
     },
     "minimum-stability": "dev",

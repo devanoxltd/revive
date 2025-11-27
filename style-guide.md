@@ -393,7 +393,6 @@ No dd() and no 'dumps'.
         <element key="dd" value="null"/>
         <element key="dump" value="null"/>
         <element key="var_dump" value="null"/>
-        <element key="ray" value="null"/>
     </property>
 </properties>
 ```
