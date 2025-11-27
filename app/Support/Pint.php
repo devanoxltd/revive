@@ -4,7 +4,6 @@ namespace App\Support;
 
 use App\Actions\ElaborateSummary;
 use App\Actions\FixCode;
-use App\Commands\DefaultCommand;
 use App\Contracts\Tool;
 
 class Pint extends Tool
@@ -25,8 +24,11 @@ class Pint extends Tool
 
     private function process(): int
     {
-        $defaultCommand = new DefaultCommand;
+        $fixCode = resolve(FixCode::class);
+        $elaborateSummary = resolve(ElaborateSummary::class);
 
-        return $defaultCommand->handle(resolve(FixCode::class), resolve(ElaborateSummary::class));
+        [$totalFiles, $changes] = $fixCode->execute();
+
+        return $elaborateSummary->execute($totalFiles, $changes);
     }
 }
