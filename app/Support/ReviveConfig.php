@@ -146,6 +146,14 @@ class ReviveConfig
             });
         }
 
+        if (file_exists(Project::path() . '/vendor/devanoxltd/laravel-revive/revive.json')) {
+            return tap(json_decode(file_get_contents(Project::path() . '/vendor/devanoxltd/laravel-revive/revive.json'), true, 512, JSON_THROW_ON_ERROR), function ($configuration) {
+                if (! is_array($configuration)) {
+                    abort(1, 'The configuration file revive.json is not valid JSON.');
+                }
+            });
+        }
+
         return [];
     }
 
