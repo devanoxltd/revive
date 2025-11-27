@@ -39,14 +39,14 @@ class PhpCodeSniffer extends Tool
     {
         $serverArgv = $_SERVER['argv'];
 
-        $this->installTightenCodingStandard();
+        $this->installDevanoxCodingStandard();
 
-        $ignore = $this->dusterConfig->get('exclude')
-            ? ['--ignore=' . implode(',', $this->dusterConfig->get('exclude'))]
+        $ignore = $this->reviveConfig->get('exclude')
+            ? ['--ignore=' . implode(',', $this->reviveConfig->get('exclude'))]
             : [];
 
         $_SERVER['argv'] = [
-            'Duster',
+            'Revive',
             '--standard=' . $this->getConfigFile(),
             ...$ignore,
             ...$params,
@@ -74,17 +74,17 @@ class PhpCodeSniffer extends Tool
      */
     private function getPaths(): array
     {
-        if ($this->getConfigFile() !== 'Tighten') {
+        if ($this->getConfigFile() !== 'Devanox') {
             return [];
         }
 
-        return $this->dusterConfig->get('paths') === [Project::path()]
-            ? $this->getDefaultDirectories() : $this->dusterConfig->get('paths');
+        return $this->reviveConfig->get('paths') === [Project::path()]
+            ? $this->getDefaultDirectories() : $this->reviveConfig->get('paths');
     }
 
-    private function installTightenCodingStandard(): void
+    private function installDevanoxCodingStandard(): void
     {
-        Config::setConfigData('installed_paths', base_path('standards/Tighten'), true);
+        Config::setConfigData('installed_paths', base_path('standards/Devanox'), true);
     }
 
     /**
@@ -98,6 +98,7 @@ class PhpCodeSniffer extends Tool
             define('PHP_CODESNIFFER_CBF', $tool === 'runPHPCBF');
         }
 
+        /** @phpstan-ignore property.notFound */
         invade(new Config)->overriddenDefaults = [];
     }
 
@@ -108,7 +109,8 @@ class PhpCodeSniffer extends Tool
             file_exists(Project::path() . '/phpcs.xml') => Project::path() . '/phpcs.xml',
             file_exists(Project::path() . '/.phpcs.xml.dist') => Project::path() . '/.phpcs.xml.dist',
             file_exists(Project::path() . '/phpcs.xml.dist') => Project::path() . '/phpcs.xml.dist',
-            default => 'Tighten',
+            file_exists(Project::path() . '/vendor/mrchetan/php_standard/ruleset.xml') => Project::path() . '/vendor/mrchetan/php_standard/ruleset.xml',
+            default => 'Devanox',
         };
     }
 
@@ -126,7 +128,7 @@ class PhpCodeSniffer extends Tool
                 Project::path() . '/resources',
                 Project::path() . '/routes',
                 Project::path() . '/tests',
-                ...$this->dusterConfig->get('include', []),
+                ...$this->reviveConfig->get('include', []),
             ],
             fn ($dir) => is_dir($dir)
         ) ?: [Project::path()];

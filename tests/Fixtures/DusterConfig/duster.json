@@ -1,8 +1,0 @@
-{
-    "include": [
-        "IncludeClass.php"
-    ],
-    "exclude": [
-        "ExcludeClass.php"
-    ]
-}

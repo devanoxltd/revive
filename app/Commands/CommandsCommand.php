@@ -8,7 +8,7 @@ class CommandsCommand extends Command
 {
     protected $signature = 'commands';
 
-    protected $description = 'Learn about Duster commands';
+    protected $description = 'Learn about Revive commands';
 
     public function handle(): int
     {

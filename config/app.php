@@ -1,7 +1,7 @@
 <?php
 
-use App\Providers\DusterServiceProvider;
 use App\Providers\PintServiceProvider;
+use App\Providers\ReviveServiceProvider;
 
 return [
 
@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => 'Duster',
+    'name' => env('APP_NAME', 'Revive'),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'version' => '3.2.0',
+    'version' => env('APP_VERSION', '0.0.1'),
 
     /*
     |--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ return [
     */
 
     'providers' => [
-        DusterServiceProvider::class,
+        ReviveServiceProvider::class,
         PintServiceProvider::class,
     ],
 

@@ -11,9 +11,10 @@
 /box.json export-ignore
 /composer.lock export-ignore
 /composer-dev.json export-ignore
+/composer-dev.lock export-ignore
 /CONTRIBUTING.md export-ignore
-/duster export-ignore
-/duster.json export-ignore
+/revive export-ignore
+/revive.json export-ignore
 /phpstan.neon export-ignore
 /phpunit.xml.dist export-ignore
 /README.md export-ignore

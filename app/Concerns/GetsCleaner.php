@@ -4,10 +4,10 @@ namespace App\Concerns;
 
 use App\Actions\Clean;
 use App\Contracts\Tool;
-use App\Support\DusterConfig;
 use App\Support\PhpCodeSniffer;
 use App\Support\PhpCsFixer;
 use App\Support\Pint;
+use App\Support\ReviveConfig;
 use App\Support\TLint;
 use App\Support\UserScript;
 
@@ -17,7 +17,7 @@ trait GetsCleaner
     {
         $using = $using
             ? explode(',', $using)
-            : ['tlint', 'phpcs', 'php-cs-fixer', 'pint', ...array_keys(DusterConfig::loadLocal()['scripts'][$mode] ?? [])];
+            : ['tlint', 'phpcs', 'php-cs-fixer', 'pint', ...array_keys(ReviveConfig::loadLocal()['scripts'][$mode] ?? [])];
 
         $tools = collect($using)
             ->map(fn ($using): ?Tool => match (trim($using)) {
@@ -42,10 +42,10 @@ trait GetsCleaner
 
     protected function userScript(string $mode, string $scriptName): ?UserScript
     {
-        $userScript = DusterConfig::loadLocal()['scripts'][$mode][$scriptName] ?? null;
+        $userScript = ReviveConfig::loadLocal()['scripts'][$mode][$scriptName] ?? null;
 
         return $userScript
-            ? new UserScript($scriptName, $userScript, resolve(DusterConfig::class))
+            ? new UserScript($scriptName, $userScript, resolve(ReviveConfig::class))
             : null;
     }
 }

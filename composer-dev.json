@@ -3,17 +3,18 @@
         "php": "^8.2.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.66",
-        "larastan/larastan": "^2.7",
-        "laravel-zero/framework": "^11.0",
-        "laravel/pint": "^1.21",
-        "nunomaduro/termwind": "^2.0",
-        "pestphp/pest": "^2.0",
-        "phpstan/phpstan": "^1.11",
-        "rector/rector": "^1.1",
-        "spatie/invade": "^1.1",
-        "spatie/laravel-ray": "^1.36",
-        "squizlabs/php_codesniffer": "^3.12",
+        "friendsofphp/php-cs-fixer": "^3.90",
+        "larastan/larastan": "^2.11",
+        "laravel-zero/framework": "^11.45",
+        "laravel/pint": "^1.26",
+        "mrchetan/php_standard": "^5.1",
+        "nunomaduro/termwind": "^2.3",
+        "pestphp/pest": "^2.36",
+        "phpstan/phpstan": "^1.12",
+        "rector/rector": "^1.2",
+        "spatie/invade": "^1.1.",
+        "spatie/laravel-ray": "^1.43",
+        "squizlabs/php_codesniffer": "^3.13",
         "tightenco/tlint": "^9.5"
     },
     "autoload": {
@@ -31,8 +32,9 @@
         "exclude-from-classmap": ["/tests/Fixtures/"]
     },
     "scripts": {
-        "lint": "./duster lint",
-        "fix": "./duster fix",
+        "app": "./revive",
+        "lint": "./revive lint",
+        "fix": "./revive fix",
         "rector-dry-run": "vendor/bin/rector process --dry-run --ansi",
         "rector": "vendor/bin/rector process --ansi"
     },
@@ -52,5 +54,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "bin": ["builds/duster"]
+    "bin": ["builds/revive"]
 }

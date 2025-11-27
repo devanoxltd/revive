@@ -1,4 +1,4 @@
-# Duster's Default Style Guide
+# Revive's Default Style Guide
 
 ## TLint
 
@@ -207,9 +207,9 @@ Prefer `Namespace\..`. over `\Namespace\...`.
 ```diff
 <?php
 
--use \Tighten\TLint;
+-use \Devanox\TLint;
 -use \PHPUnit\Framework\TestCase;
-+use Tighten\TLint;
++use Devanox\TLint;
 +use PHPUnit\Framework\TestCase;
 
 echo test;
@@ -383,14 +383,13 @@ Disable camel caps rule for tests
 
 ### Generic.PHP.ForbiddenFunctions
 
-No compact() and no 'dumps'.
+No dd() and no 'dumps'.
 
 #### Configuration
 
 ```xml
 <properties>
     <property name="forbiddenFunctions" type="array">
-        <element key="compact" value="null"/>
         <element key="dd" value="null"/>
         <element key="dump" value="null"/>
         <element key="var_dump" value="null"/>
@@ -399,7 +398,7 @@ No compact() and no 'dumps'.
 </properties>
 ```
 
-### Tighten.PHP.UseConfigOverEnv
+### Devanox.PHP.UseConfigOverEnv
 
 Use config() over env().
 
@@ -417,7 +416,7 @@ Class name should match the file name.
 
 ## PHP CS Fixer
 
-### Tighten/custom_controller_order
+### Devanox/custom_controller_order
 
 Orders controller class elements to match the order provided in the configuration.
 
@@ -456,7 +455,7 @@ Orders controller class elements to match the order provided in the configuratio
 ]
 ```
 
-### Tighten/custom_ordered_class_elements
+### Devanox/custom_ordered_class_elements
 
 Orders class elements to match the order provided in the configuration.
 
@@ -488,7 +487,7 @@ Orders class elements to match the order provided in the configuration.
 ]
 ```
 
-### Tighten/custom_phpunit_order
+### Devanox/custom_phpunit_order
 
 Orders PHPUnit fixtures at the top of files.
 

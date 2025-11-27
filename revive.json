@@ -1,0 +1,25 @@
+{
+    "include" : [
+        "app",
+        "config",
+        "database",
+        "lang",
+        "routes",
+        "standards",
+        "tests"
+    ],
+    "exclude" : [
+        "tests/Fixtures",
+        "public/index.php",
+        "bootstrap/app.php"
+    ],
+    "scripts": {
+        "lint": {
+            "PHP Version": ["php", "-v"],
+            "PHPStan Version": ["./vendor/bin/phpstan", "-V"],
+            "PHPStan": ["./vendor/bin/phpstan", "analyse"],
+            "Pest Version": ["./vendor/bin/pest", "--version"],
+            "Pest": ["./vendor/bin/pest"]
+        }
+    }
+}

@@ -17,9 +17,9 @@ class GitHubActionsCommand extends Command
     public function handle(): int
     {
         $choices = [
-            'Lint only' => 'duster-lint',
-            'Fix and commit' => 'duster-fix',
-            'Fix, commit, and update .git-blame-ignore-revs' => 'duster-fix-blame',
+            'Lint only' => 'revive-lint',
+            'Fix and commit' => 'revive-fix',
+            'Fix, commit, and update .git-blame-ignore-revs' => 'revive-fix-blame',
         ];
 
         $branch = $this->anticipate('What is the name of your primary branch?', ['main', 'develop', 'master'], 'main');
@@ -29,7 +29,7 @@ class GitHubActionsCommand extends Command
 
         if (Str::contains($workflowName, 'fix')) {
             $this->warn('The resulting commit will stop any currently running workflows and will not trigger another.');
-            $this->warn('Checkout Duster\'s documentation for a workaround.');
+            $this->warn('Checkout Revive\'s documentation for a workaround.');
             if (! $this->confirm('Do you wish to continue?', true)) {
                 return Command::FAILURE;
             }

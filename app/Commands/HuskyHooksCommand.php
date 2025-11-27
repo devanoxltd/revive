@@ -51,7 +51,7 @@ class HuskyHooksCommand extends Command
 
         $preCommit = file_get_contents(__DIR__ . '/../../stubs/husky-hooks/pre-commit');
 
-        $lintStaged = file_get_contents(__DIR__ . "/../../stubs/husky-hooks/duster-{$lintStagedConfigFile}.js");
+        $lintStaged = file_get_contents(__DIR__ . "/../../stubs/husky-hooks/revive-{$lintStagedConfigFile}.js");
 
         if (! is_dir(getcwd() . '/.husky')) {
             mkdir(getcwd() . '/.husky', 0777, true);

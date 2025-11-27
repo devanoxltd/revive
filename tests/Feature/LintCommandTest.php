@@ -81,7 +81,7 @@ it('lints with PHP CS Fixer', function () {
     expect($statusCode)->toBe(1)
         ->and($output)
         ->toContain('Linting using PHP CS Fixer')
-        ->toContain('Tighten/custom');
+        ->toContain('Devanox/custom');
 });
 
 it('only lints with PHP CS Fixer', function () {
@@ -93,7 +93,7 @@ it('only lints with PHP CS Fixer', function () {
     expect($statusCode)->toBe(1)
         ->and($output)
         ->toContain('Linting using PHP CS Fixer')
-        ->toContain('Tighten/custom')
+        ->toContain('Devanox/custom')
         ->not->toContain('Linting using TLint')
         ->not->toContain('Linting using PHP_CodeSniffer')
         ->not->toContain('Linting using Pint');

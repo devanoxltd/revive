@@ -9,7 +9,7 @@ return (new Config())
     ->setUsingCache(false)
     ->registerCustomFixers([new CustomOrderedClassElementsFixer()])
     ->setRules([
-        'Tighten/custom_ordered_class_elements' => [
+        'Devanox/custom_ordered_class_elements' => [
             'order' => [
                 'method_public',
                 'method:__invoke',

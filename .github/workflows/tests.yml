@@ -2,7 +2,7 @@ name: tests
 
 on:
   push:
-    branches: [3.x]
+    branches: [main]
   pull_request:
 
 jobs:
@@ -39,8 +39,8 @@ jobs:
         shell: bash
         run: export COMPOSER=composer-dev.json && composer install
 
-      - name: Run Duster
-        run: ./builds/duster lint --using="tlint,phpcodesniffer,phpcsfixer,pint"
+      - name: Run Revive
+        run: ./builds/revive lint --using="tlint,phpcodesniffer,phpcsfixer,pint"
 
       - name: Run PHPStan
         run: vendor/bin/phpstan

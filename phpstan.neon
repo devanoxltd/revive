@@ -10,7 +10,7 @@ parameters:
     - standards
   level: 6
   excludePaths:
-    - standards/Tighten/Sniffs/PHP/UseConfigOverEnvSniff.php
+    - standards/Devanox/Sniffs/PHP/UseConfigOverEnvSniff.php
   ignoreErrors:
   - '#Unable to resolve the template type TKey in call to function collect#'
   - '#Unable to resolve the template type TValue in call to function collect#'

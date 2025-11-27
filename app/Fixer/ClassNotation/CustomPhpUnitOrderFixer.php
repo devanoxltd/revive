@@ -12,7 +12,7 @@ class CustomPhpUnitOrderFixer extends CustomOrderedClassElementsFixer
 {
     public function getName(): string
     {
-        return 'Tighten/custom_phpunit_order';
+        return 'Devanox/custom_phpunit_order';
     }
 
     /**

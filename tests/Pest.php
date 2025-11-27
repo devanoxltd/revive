@@ -1,6 +1,6 @@
 <?php
 
-use App\DusterKernel;
+use App\ReviveKernel;
 use Illuminate\Support\Arr;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputInterface;
@@ -21,7 +21,7 @@ use Tests\TestCase;
 
 uses(TestCase::class)->in('Feature', 'Fixer');
 
-// Move to test directory to prevent Duster's own config files being used
+// Move to test directory to prevent Revive's own config files being used
 uses()
     ->beforeEach(fn () => chdir(__DIR__))
     ->in('Feature');
@@ -70,7 +70,7 @@ function run($command, $arguments)
     app()->singleton(InputInterface::class, fn () => $input);
     app()->singleton(OutputInterface::class, fn () => $output);
 
-    $statusCode = resolve(DusterKernel::class)->handle($input, $output);
+    $statusCode = resolve(ReviveKernel::class)->handle($input, $output);
 
     $output = preg_replace('#\\x1b[[][^A-Za-z]*[A-Za-z]#', '', $output->fetch());
 
