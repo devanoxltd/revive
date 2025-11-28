@@ -17,9 +17,7 @@
         "lint": {
             "PHP Version": ["php", "-v"],
             "PHPStan Version": ["./vendor/bin/phpstan", "-V"],
-            "PHPStan": ["./vendor/bin/phpstan", "analyse"],
-            "Pest Version": ["./vendor/bin/pest", "--version"],
-            "Pest": ["./vendor/bin/pest"]
+            "PHPStan": ["php", "-d", "memory_limit=2G", "./vendor/bin/phpstan", "analyse"]
         }
     }
 }

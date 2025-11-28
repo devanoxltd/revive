@@ -65,7 +65,7 @@ class ReviveConfig
         );
 
         // remove exclude paths from include paths
-        $excludePaths = collect($config['exclude'] ?? []);
+        $excludePaths = collect($config['exclude']);
 
         // remove any include paths that are in exclude paths
         $config['include'] = collect($includePaths)->reject(function ($includePath) use ($excludePaths) {

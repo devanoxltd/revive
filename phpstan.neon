@@ -1,8 +1,9 @@
 includes:
   - ./vendor/larastan/larastan/extension.neon
-  - ./vendor/spatie/invade/phpstan-extension.neon
 parameters:
-  phpVersion: 80300
+  parallel:
+    maximumNumberOfProcesses: 4
+  phpVersion: 80400
   paths:
     - app
     - bootstrap
