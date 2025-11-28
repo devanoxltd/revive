@@ -29,7 +29,8 @@ trait GetsCleaner
                 'phpcsfixer' => resolve(PhpCsFixer::class),
                 'pint' => resolve(Pint::class),
                 default => $this->userScript($mode, $using),
-            })
+            }
+            )
             ->filter()
             ->unique()
             ->toArray();

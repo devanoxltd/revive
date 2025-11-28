@@ -51,7 +51,8 @@ class TLint extends Tool
     private function executeCommand(BaseCommand $tlintCommand): bool
     {
         $tlintCommand->config->excluded = [
-            ...$tlintCommand->config->excluded ?? [],
+            ...$tlintCommand->config->excluded ??
+        [],
             ...$this->reviveConfig->get('exclude', []),
         ];
 

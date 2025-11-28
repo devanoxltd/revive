@@ -8,6 +8,7 @@
         "laravel-zero/framework": "^12.0",
         "laravel/pint": "^1.26",
         "mrchetan/php_standard": "^5.3",
+        "mockery/mockery": "^1.6.12",
         "nunomaduro/termwind": "^2.3",
         "pestphp/pest": "^4.1",
         "phpstan/phpstan": "^2.1",

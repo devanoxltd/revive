@@ -1,4 +1,9 @@
+* text=auto eol=lf
 /.github export-ignore
+.scrutinizer.yml export-ignore
+BACKERS.md export-ignore
+CONTRIBUTING.md export-ignore
+CHANGELOG.md export-ignore
 /app export-ignore
 /bootstrap export-ignore
 /config export-ignore
@@ -12,9 +17,7 @@
 /composer.lock export-ignore
 /composer-dev.json export-ignore
 /composer-dev.lock export-ignore
-/CONTRIBUTING.md export-ignore
 /revive export-ignore
-/revive.json export-ignore
 /phpstan.neon export-ignore
 /phpunit.xml.dist export-ignore
 /README.md export-ignore

@@ -73,10 +73,6 @@ class PhpCodeSniffer extends Tool
      */
     private function getPaths(): array
     {
-        if ($this->getConfigFile() !== 'Devanox') {
-            return [];
-        }
-
         return $this->reviveConfig->get('paths') === [Project::path()]
             ? $this->getDefaultDirectories() : $this->reviveConfig->get('paths');
     }
