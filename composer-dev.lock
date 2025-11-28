@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f641ae006139b1c694be07da4dcb4726",
+    "content-hash": "df61c22f685e1f930fcb53d69fee1fe8",
     "packages": [],
     "packages-dev": [
         {
@@ -3499,16 +3499,16 @@
         },
         {
             "name": "mrchetan/php_standard",
-            "version": "5.2.0",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrchetan/PHPStandard.git",
-                "reference": "c27e3ef3cefa1f141c7b7fb177886def1f36e672"
+                "reference": "6201be54d52663a1c219cafe38d5bf2479822601"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mrchetan/PHPStandard/zipball/c27e3ef3cefa1f141c7b7fb177886def1f36e672",
-                "reference": "c27e3ef3cefa1f141c7b7fb177886def1f36e672",
+                "url": "https://api.github.com/repos/mrchetan/PHPStandard/zipball/6201be54d52663a1c219cafe38d5bf2479822601",
+                "reference": "6201be54d52663a1c219cafe38d5bf2479822601",
                 "shasum": ""
             },
             "require": {
@@ -3545,7 +3545,7 @@
             ],
             "support": {
                 "issues": "https://github.com/mrchetan/PHPStandard/issues",
-                "source": "https://github.com/mrchetan/PHPStandard/tree/5.2.0"
+                "source": "https://github.com/mrchetan/PHPStandard/tree/5.3.0"
             },
             "funding": [
                 {
@@ -3553,7 +3553,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-27T13:59:35+00:00"
+            "time": "2025-11-28T06:33:15+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -4719,16 +4719,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.6.4",
+            "version": "5.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "90a04bcbf03784066f16038e87e23a0a83cee3c2"
+                "reference": "90614c73d3800e187615e2dd236ad0e2a01bf761"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/90a04bcbf03784066f16038e87e23a0a83cee3c2",
-                "reference": "90a04bcbf03784066f16038e87e23a0a83cee3c2",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/90614c73d3800e187615e2dd236ad0e2a01bf761",
+                "reference": "90614c73d3800e187615e2dd236ad0e2a01bf761",
                 "shasum": ""
             },
             "require": {
@@ -4777,9 +4777,9 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.4"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.5"
             },
-            "time": "2025-11-17T21:13:10+00:00"
+            "time": "2025-11-27T19:50:05+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8da70205b77a82e7764d6da50ba15aa9",
+    "content-hash": "51d2e508660a1e23bcd393f71bc9236c",
     "packages": [],
     "packages-dev": [
         {
@@ -3298,16 +3298,16 @@
         },
         {
             "name": "mrchetan/php_standard",
-            "version": "5.2.0",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrchetan/PHPStandard.git",
-                "reference": "c27e3ef3cefa1f141c7b7fb177886def1f36e672"
+                "reference": "6201be54d52663a1c219cafe38d5bf2479822601"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mrchetan/PHPStandard/zipball/c27e3ef3cefa1f141c7b7fb177886def1f36e672",
-                "reference": "c27e3ef3cefa1f141c7b7fb177886def1f36e672",
+                "url": "https://api.github.com/repos/mrchetan/PHPStandard/zipball/6201be54d52663a1c219cafe38d5bf2479822601",
+                "reference": "6201be54d52663a1c219cafe38d5bf2479822601",
                 "shasum": ""
             },
             "require": {
@@ -3344,7 +3344,7 @@
             ],
             "support": {
                 "issues": "https://github.com/mrchetan/PHPStandard/issues",
-                "source": "https://github.com/mrchetan/PHPStandard/tree/5.2.0"
+                "source": "https://github.com/mrchetan/PHPStandard/tree/5.3.0"
             },
             "funding": [
                 {
@@ -3352,7 +3352,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-27T13:59:35+00:00"
+            "time": "2025-11-28T06:33:15+00:00"
         },
         {
             "name": "nesbot/carbon",

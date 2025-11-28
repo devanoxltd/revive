@@ -37,7 +37,7 @@
         "larastan/larastan": "^3.8",
         "laravel-zero/framework": "^12.0",
         "laravel/pint": "^1.26",
-        "mrchetan/php_standard": "^5.2",
+        "mrchetan/php_standard": "^5.3",
         "nunomaduro/termwind": "^2.3",
         "spatie/invade": "^2.1",
         "squizlabs/php_codesniffer": "^4.0",
