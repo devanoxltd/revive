@@ -3,18 +3,18 @@
         "php": "^8.3"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.90",
-        "larastan/larastan": "^3.8",
-        "laravel-zero/framework": "^12.0",
-        "laravel/pint": "^1.26",
+        "friendsofphp/php-cs-fixer": "^3.93.1",
+        "larastan/larastan": "^3.9.2",
+        "laravel-zero/framework": "^12.0.5",
+        "laravel/pint": "^1.27",
         "mrchetan/php_standard": "^5.3",
         "mockery/mockery": "^1.6.12",
-        "nunomaduro/termwind": "^2.3",
-        "pestphp/pest": "^4.1",
-        "phpstan/phpstan": "^2.1",
-        "rector/rector": "^2.2",
+        "nunomaduro/termwind": "^2.3.3",
+        "pestphp/pest": "^4.3.2",
+        "phpstan/phpstan": "^2.1.38",
+        "rector/rector": "^2.3.5",
         "spatie/invade": "^2.1",
-        "squizlabs/php_codesniffer": "^4.0",
+        "squizlabs/php_codesniffer": "^4.0.1",
         "tightenco/tlint": "^9.5"
     },
     "autoload": {
