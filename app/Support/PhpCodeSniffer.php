@@ -39,7 +39,9 @@ class PhpCodeSniffer extends Tool
     {
         $serverArgv = $_SERVER['argv'];
 
-        $this->installTightenCodingStandard();
+        if (defined('PHP_CODESNIFFER_CBF') === false) {
+            define('PHP_CODESNIFFER_CBF', $tool === 'runPHPCBF');
+        }
 
         $ignore = $this->dusterConfig->get('exclude')
             ? ['--ignore=' . implode(',', $this->dusterConfig->get('exclude'))]
@@ -52,7 +54,9 @@ class PhpCodeSniffer extends Tool
             ...$params,
         ];
 
-        $this->resetConfig($tool);
+        $this->installTightenCodingStandard();
+
+        $this->resetConfig();
 
         $runner = new Runner;
 
@@ -84,7 +88,7 @@ class PhpCodeSniffer extends Tool
 
     private function installTightenCodingStandard(): void
     {
-        Config::setConfigData('installed_paths', base_path('standards/Tighten'), true);
+        (new Config)->setConfigData('installed_paths', base_path('standards/Tighten'), true);
     }
 
     /**
@@ -92,12 +96,8 @@ class PhpCodeSniffer extends Tool
      * which doesn't allow us to update the config between runs
      * we need to reset it so we can also lint in the fix command.
      */
-    private function resetConfig(string $tool): void
+    private function resetConfig(): void
     {
-        if (defined('PHP_CODESNIFFER_CBF') === false) {
-            define('PHP_CODESNIFFER_CBF', $tool === 'runPHPCBF');
-        }
-
         invade(new Config)->overriddenDefaults = [];
     }
 

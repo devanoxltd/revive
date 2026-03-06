@@ -6,6 +6,7 @@ use App\Actions\ElaborateSummary;
 use App\Actions\FixCode;
 use App\Commands\DefaultCommand;
 use App\Contracts\Tool;
+use Symfony\Component\Console\Input\ArrayInput;
 
 class Pint extends Tool
 {
@@ -26,6 +27,10 @@ class Pint extends Tool
     private function process(): int
     {
         $defaultCommand = new DefaultCommand;
+
+        $input = new ArrayInput([]);
+        $input->bind($defaultCommand->getDefinition());
+        $defaultCommand->setInput($input);
 
         return $defaultCommand->handle(resolve(FixCode::class), resolve(ElaborateSummary::class));
     }
