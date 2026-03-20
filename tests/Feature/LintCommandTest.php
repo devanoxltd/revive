@@ -73,6 +73,15 @@ it('only lints with PHP_CodeSniffer', function () {
         ->not->toContain('Linting using Pint');
 });
 
+it('lints with PHP_CodeSniffer skipping blade files passed individually', function () {
+    [$statusCode, $output] = run('lint', [
+        'path' => base_path('tests/Fixtures/PhpCodeSnifferBladeOnly/file.blade.php'),
+        '--using' => 'phpcs',
+    ]);
+
+    expect($statusCode)->toBe(0);
+});
+
 it('lints with PHP CS Fixer', function () {
     [$statusCode, $output] = run('lint', [
         'path' => base_path('tests/Fixtures/PhpCsFixerFixableIssues'),
