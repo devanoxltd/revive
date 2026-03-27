@@ -35,7 +35,7 @@ class PhpCodeSniffer extends Tool
             }
         }
 
-        $fix = $this->process('runPHPCBF', $paths ?? []);
+        $fix = $this->process('runPHPCBF', $paths);
 
         $lint = $this->process('runPHPCS', ['-n', '--report=summary', ...$paths]);
 
