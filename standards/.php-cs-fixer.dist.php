@@ -17,7 +17,7 @@ return (new Config())
         new CustomPhpUnitOrderFixer(),
     ])
     ->setRules([
-        'Tighten/custom_controller_order' => true,
-        'Tighten/custom_ordered_class_elements' => true,
-        'Tighten/custom_phpunit_order' => true,
+        'Devanox/custom_controller_order' => true,
+        'Devanox/custom_ordered_class_elements' => true,
+        'Devanox/custom_phpunit_order' => true,
     ]);

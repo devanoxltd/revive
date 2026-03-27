@@ -2,7 +2,7 @@
 <ruleset>
     <file>ExampleClass.php</file>
 
-    <rule ref="Tighten"/>
+    <rule ref="Devanox"/>
 
     <rule ref="Generic.Commenting.Todo"/>
 </ruleset>

@@ -12,7 +12,7 @@ class CustomControllerOrderFixer extends CustomOrderedClassElementsFixer
 {
     public function getName(): string
     {
-        return 'Tighten/custom_controller_order';
+        return 'Devanox/custom_controller_order';
     }
 
     /**

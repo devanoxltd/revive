@@ -6,4 +6,4 @@ use PhpCsFixer\Config;
 return (new Config())
     ->setUsingCache(false)
     ->registerCustomFixers([new CustomPhpUnitOrderFixer])
-    ->setRules(['Tighten/custom_phpunit_order' => true]);
+    ->setRules(['Devanox/custom_phpunit_order' => true]);

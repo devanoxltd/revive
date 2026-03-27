@@ -13,7 +13,7 @@ use App\Project;
 use App\Repositories\ConfigurationJsonRepository;
 use App\Repositories\GitPathsRepository;
 use App\Repositories\PintConfigurationJsonRepository;
-use App\Support\DusterConfig;
+use App\Support\ReviveConfig;
 use Illuminate\Support\ServiceProvider;
 use PhpCsFixer\Error\ErrorsManager;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -68,9 +68,9 @@ class PintServiceProvider extends ServiceProvider
                 base_path('standards/pint.json'),
             ])->first(fn ($path) => file_exists($path));
 
-            $dusterConfig = DusterConfig::scopeConfigPaths(DusterConfig::loadLocal());
+            $reviveConfig = ReviveConfig::scopeConfigPaths(ReviveConfig::loadLocal());
 
-            return new PintConfigurationJsonRepository($config, null, $dusterConfig['exclude']);
+            return new PintConfigurationJsonRepository($config, null, $reviveConfig['exclude']);
         });
 
         $this->app->singleton(PathsRepository::class, fn () => new GitPathsRepository(

@@ -3,14 +3,14 @@
 namespace App\Contracts;
 
 use App\Concerns\CommandHelpers;
-use App\Support\DusterConfig;
+use App\Support\ReviveConfig;
 
 abstract class Tool
 {
     use CommandHelpers;
 
     public function __construct(
-        protected DusterConfig $dusterConfig,
+        protected ReviveConfig $reviveConfig,
     ) {}
 
     abstract public function lint(): int;

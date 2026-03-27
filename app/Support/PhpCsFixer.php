@@ -52,8 +52,8 @@ class PhpCsFixer extends Tool
                 'config' => $this->getConfigFilePath(),
                 'allow-risky' => 'yes',
                 'diff' => $output->isVerbose(),
-                'dry-run' => $this->dusterConfig->get('mode') === 'lint',
-                'path' => $this->dusterConfig->get('paths'),
+                'dry-run' => $this->reviveConfig->get('mode') === 'lint',
+                'path' => $this->reviveConfig->get('paths'),
                 'path-mode' => ConfigurationResolver::PATH_MODE_OVERRIDE,
                 'stop-on-violation' => false,
                 'verbosity' => $output->getVerbosity(),
@@ -93,11 +93,11 @@ class PhpCsFixer extends Tool
     /**
      * Update the finder with the paths and exclude from the config.
      * We are bypassing resolveFinder() in ConfigurationResolver
-     * to allow for us to use the global duster config.
+     * to allow for us to use the global revive config.
      */
     private function updateFinder(Finder $finder): Finder
     {
-        collect($this->dusterConfig->get('paths', []))->each(function ($path) use ($finder) {
+        collect($this->reviveConfig->get('paths', []))->each(function ($path) use ($finder) {
             if (is_dir($path)) {
                 $finder = $finder->in($path);
             } elseif (is_file($path)) {
@@ -105,7 +105,7 @@ class PhpCsFixer extends Tool
             }
         });
 
-        collect($this->dusterConfig->get('exclude', []))->each(function ($path) use ($finder) {
+        collect($this->reviveConfig->get('exclude', []))->each(function ($path) use ($finder) {
             if (is_dir($path)) {
                 $finder = $finder->exclude($path);
             } elseif (is_file($path)) {

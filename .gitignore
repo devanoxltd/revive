@@ -1,4 +1,9 @@
 /vendor
+/.idea
+/.vscode
+/.vagrant
 .phpunit.result.cache
 .phpunit.cache
-.idea
+.DS_Store
+.env
+composer-dev.json

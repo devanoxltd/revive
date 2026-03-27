@@ -1,7 +1,7 @@
 <?php
 
-use App\Providers\DusterServiceProvider;
 use App\Providers\PintServiceProvider;
+use App\Providers\ReviveServiceProvider;
 
 return [
 
@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => 'Duster',
+    'name' => env('APP_NAME', 'Revive'),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'version' => '3.4.0',
+    'version' => app('git.version'),
 
     /*
     |--------------------------------------------------------------------------
@@ -47,19 +47,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Timezone
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify the default timezone for your application, which
-    | will be used by the PHP date and date-time functions. We have gone
-    | ahead and set this to a sensible default for you out of the box.
-    |
-    */
-
-    'timezone' => 'UTC',
-
-    /*
-    |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
     |
@@ -70,7 +57,7 @@ return [
     */
 
     'providers' => [
-        DusterServiceProvider::class,
+        ReviveServiceProvider::class,
         PintServiceProvider::class,
     ],
 

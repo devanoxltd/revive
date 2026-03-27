@@ -12,8 +12,8 @@ class PintConfigurationJsonRepository extends ConfigurationJsonRepository
     public function __construct(
         protected $path,
         protected $preset,
-        protected array $exclude)
-    {
+        protected array $exclude
+    ) {
         parent::__construct($path, $preset);
     }
 

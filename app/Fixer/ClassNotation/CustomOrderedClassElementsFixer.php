@@ -137,7 +137,7 @@ class CustomOrderedClassElementsFixer extends AbstractFixer implements Configura
 
     public function getName(): string
     {
-        return 'Tighten/custom_ordered_class_elements';
+        return 'Devanox/custom_ordered_class_elements';
     }
 
     /**

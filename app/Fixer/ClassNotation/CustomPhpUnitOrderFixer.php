@@ -12,7 +12,7 @@ class CustomPhpUnitOrderFixer extends CustomOrderedClassElementsFixer
 {
     public function getName(): string
     {
-        return 'Tighten/custom_phpunit_order';
+        return 'Devanox/custom_phpunit_order';
     }
 
     /**
@@ -58,7 +58,7 @@ class CustomPhpUnitOrderFixer extends CustomOrderedClassElementsFixer
     {
         $analyzer = new PhpUnitTestCaseAnalyzer;
 
-        foreach ($analyzer->findPhpUnitClasses($tokens) as $_) {
+        foreach ($analyzer->findPhpUnitClasses($tokens) as $indices) {
             parent::applyFix($file, $tokens);
             break;
         }

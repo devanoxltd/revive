@@ -1,8 +1,9 @@
 includes:
   - ./vendor/larastan/larastan/extension.neon
-  - ./vendor/spatie/invade/phpstan-extension.neon
 parameters:
-  phpVersion: 80300
+  parallel:
+    maximumNumberOfProcesses: 8
+  phpVersion: 80400
   paths:
     - app
     - bootstrap
@@ -10,7 +11,7 @@ parameters:
     - standards
   level: 6
   excludePaths:
-    - standards/Tighten/Sniffs/PHP/UseConfigOverEnvSniff.php
+    - standards/Devanox/Sniffs/PHP/UseConfigOverEnvSniff.php
   ignoreErrors:
   - '#Unable to resolve the template type TKey in call to function collect#'
   - '#Unable to resolve the template type TValue in call to function collect#'

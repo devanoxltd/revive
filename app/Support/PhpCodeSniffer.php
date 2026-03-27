@@ -14,13 +14,17 @@ class PhpCodeSniffer extends Tool
     {
         $this->heading('Linting using PHP_CodeSniffer');
 
-        if (! $this->hasCustomConfig()) {
-            if (empty($paths = $this->getPaths())) {
-                return 0;
-            }
+        if ($this->hasCustomConfig()) {
+            $paths = [];
+        } else {
+            $paths = $this->getPaths();
         }
 
-        return $this->process('runPHPCS', $paths ?? []);
+        if (empty($paths)) {
+            return 0;
+        }
+
+        return $this->process('runPHPCS', $paths);
     }
 
     public function fix(): int
@@ -30,9 +34,11 @@ class PhpCodeSniffer extends Tool
         if ($this->hasCustomConfig()) {
             $paths = [];
         } else {
-            if (empty($paths = $this->getPaths())) {
-                return 0;
-            }
+            $paths = $this->getPaths();
+        }
+
+        if (empty($paths)) {
+            return 0;
         }
 
         $fix = $this->process('runPHPCBF', $paths);
@@ -57,18 +63,18 @@ class PhpCodeSniffer extends Tool
             define('PHP_CODESNIFFER_CBF', $tool === 'runPHPCBF');
         }
 
-        $ignore = $this->dusterConfig->get('exclude')
-            ? ['--ignore=' . implode(',', $this->dusterConfig->get('exclude'))]
+        $ignore = $this->reviveConfig->get('exclude')
+            ? ['--ignore=' . implode(',', $this->reviveConfig->get('exclude'))]
             : [];
 
         $_SERVER['argv'] = [
-            'Duster',
+            'Revive',
             '--standard=' . $this->getConfigFile(),
             ...$ignore,
             ...$params,
         ];
 
-        $this->installTightenCodingStandard();
+        $this->installDevanoxCodingStandard();
 
         $this->resetConfig();
 
@@ -92,8 +98,8 @@ class PhpCodeSniffer extends Tool
      */
     private function getPaths(): array
     {
-        $paths = $this->dusterConfig->get('paths') === [Project::path()]
-            ? $this->getDefaultDirectories() : $this->dusterConfig->get('paths');
+        $paths = $this->reviveConfig->get('paths') === [Project::path()]
+            ? $this->getDefaultDirectories() : $this->reviveConfig->get('paths');
 
         return array_values(array_filter($paths, function ($path) {
             if (is_dir($path)) {
@@ -106,12 +112,12 @@ class PhpCodeSniffer extends Tool
 
     private function hasCustomConfig(): bool
     {
-        return $this->getConfigFile() !== 'Tighten';
+        return $this->getConfigFile() === 'Devanox';
     }
 
-    private function installTightenCodingStandard(): void
+    private function installDevanoxCodingStandard(): void
     {
-        (new Config)->setConfigData('installed_paths', base_path('standards/Tighten'), true);
+        (new Config)->setConfigData('installed_paths', base_path('standards/Devanox'), true);
     }
 
     /**
@@ -121,6 +127,7 @@ class PhpCodeSniffer extends Tool
      */
     private function resetConfig(): void
     {
+        // @phpstan-ignore-next-line
         invade(new Config)->overriddenDefaults = [];
     }
 
@@ -131,7 +138,8 @@ class PhpCodeSniffer extends Tool
             file_exists(Project::path() . '/phpcs.xml') => Project::path() . '/phpcs.xml',
             file_exists(Project::path() . '/.phpcs.xml.dist') => Project::path() . '/.phpcs.xml.dist',
             file_exists(Project::path() . '/phpcs.xml.dist') => Project::path() . '/phpcs.xml.dist',
-            default => 'Tighten',
+            file_exists(Project::path() . '/vendor/mrchetan/php_standard/ruleset.xml') => Project::path() . '/vendor/mrchetan/php_standard/ruleset.xml',
+            default => 'Devanox',
         };
     }
 
@@ -149,7 +157,7 @@ class PhpCodeSniffer extends Tool
                 Project::path() . '/resources',
                 Project::path() . '/routes',
                 Project::path() . '/tests',
-                ...$this->dusterConfig->get('include', []),
+                ...$this->reviveConfig->get('include', []),
             ],
             fn ($dir) => is_dir($dir)
         ) ?: [Project::path()];

@@ -1,6 +1,20 @@
 <?php
 
-use App\Commands\CommandsCommand;
+use Illuminate\Console\Scheduling\ScheduleFinishCommand;
+use Illuminate\Console\Scheduling\ScheduleListCommand;
+use Illuminate\Console\Scheduling\ScheduleRunCommand;
+use Illuminate\Foundation\Console\VendorPublishCommand;
+use LaravelZero\Framework\Commands\InstallCommand;
+use LaravelZero\Framework\Commands\MakeCommand;
+use LaravelZero\Framework\Commands\RenameCommand;
+use LaravelZero\Framework\Commands\StubPublishCommand;
+use LaravelZero\Framework\Commands\TestMakeCommand;
+use NunoMaduro\LaravelConsoleSummary\SummaryCommand;
+use Pest\Laravel\Commands\PestDatasetCommand;
+use Pest\Laravel\Commands\PestInstallCommand;
+use Pest\Laravel\Commands\PestTestCommand;
+use Symfony\Component\Console\Command\DumpCompletionCommand;
+use Symfony\Component\Console\Command\HelpCommand;
 
 return [
 
@@ -15,7 +29,7 @@ return [
     |
     */
 
-    'default' => CommandsCommand::class,
+    'default' => SummaryCommand::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +56,7 @@ return [
     */
 
     'add' => [
-        // ..
+        //
     ],
 
     /*
@@ -57,23 +71,23 @@ return [
     */
 
     'hidden' => array_filter([
-        NunoMaduro\LaravelConsoleSummary\SummaryCommand::class,
-        Symfony\Component\Console\Command\DumpCompletionCommand::class,
-        Symfony\Component\Console\Command\HelpCommand::class,
-        Illuminate\Console\Scheduling\ScheduleRunCommand::class,
-        Illuminate\Console\Scheduling\ScheduleListCommand::class,
-        Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
-        Illuminate\Foundation\Console\VendorPublishCommand::class,
-        LaravelZero\Framework\Commands\StubPublishCommand::class,
+        SummaryCommand::class,
+        DumpCompletionCommand::class,
+        HelpCommand::class,
+        ScheduleRunCommand::class,
+        ScheduleListCommand::class,
+        ScheduleFinishCommand::class,
+        VendorPublishCommand::class,
+        StubPublishCommand::class,
 
-        class_exists(\Pest\Laravel\Commands\PestDatasetCommand::class) ? Pest\Laravel\Commands\PestDatasetCommand::class : null,
-        class_exists(\Pest\Laravel\Commands\PestInstallCommand::class) ? Pest\Laravel\Commands\PestInstallCommand::class : null,
-        class_exists(\Pest\Laravel\Commands\PestTestCommand::class) ? Pest\Laravel\Commands\PestTestCommand::class : null,
+        class_exists(PestDatasetCommand::class) ? PestDatasetCommand::class : null,
+        class_exists(PestInstallCommand::class) ? PestInstallCommand::class : null,
+        class_exists(PestTestCommand::class) ? PestTestCommand::class : null,
 
-        LaravelZero\Framework\Commands\MakeCommand::class,
-        LaravelZero\Framework\Commands\TestMakeCommand::class,
-        LaravelZero\Framework\Commands\RenameCommand::class,
-        LaravelZero\Framework\Commands\InstallCommand::class,
+        MakeCommand::class,
+        TestMakeCommand::class,
+        RenameCommand::class,
+        InstallCommand::class,
     ]),
 
     /*
@@ -88,7 +102,7 @@ return [
     */
 
     'remove' => [
-        // ..
+        //
     ],
 
 ];

@@ -19,9 +19,9 @@ class UserScript extends Tool
     public function __construct(
         protected string $name,
         protected array $command,
-        protected DusterConfig $dusterConfig,
+        protected ReviveConfig $reviveConfig,
     ) {
-        parent::__construct($dusterConfig);
+        parent::__construct($reviveConfig);
     }
 
     public function lint(): int
@@ -50,10 +50,10 @@ class UserScript extends Tool
      */
     private function process(): int
     {
-        $dusterConfig = DusterConfig::loadLocal();
+        $reviveConfig = ReviveConfig::loadLocal();
 
         $process = new Process($this->command);
-        $process->setTimeout($dusterConfig['processTimeout'] ?? 60);
+        $process->setTimeout($reviveConfig['processTimeout'] ?? 60);
         $output = app()->get(OutputInterface::class);
 
         try {
@@ -61,7 +61,7 @@ class UserScript extends Tool
 
             return $process->getExitCode();
         } catch (ProcessTimedOutException $e) {
-            $this->failure($e->getMessage() . '<br />You can overwrite this timeout with the processTimeout key in your duster.json file.');
+            $this->failure($e->getMessage() . '<br />You can overwrite this timeout with the processTimeout key in your revive.json file.');
 
             return Command::FAILURE;
         }

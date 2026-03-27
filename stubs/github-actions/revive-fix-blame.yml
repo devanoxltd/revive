@@ -1,0 +1,44 @@
+name: Revive Fix
+
+# Commits made in here will not trigger any workflows
+# Checkout Revive's documentation for a workaround
+
+on:
+    push:
+        branches: [ YOUR_BRANCH_NAME ]
+    pull_request:
+
+jobs:
+  revive:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+
+      - name: "Revive Fix"
+        uses: devanoxltd/revive-action@v2
+        with:
+          args: fix
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        id: auto_commit_action
+        with:
+          commit_message: Revive Fix
+          commit_user_name: GitHub Action
+          commit_user_email: actions@github.com
+
+      - name: Ignore Revive commit in git blame
+        if: steps.auto_commit_action.outputs.changes_detected == 'true'
+        run: echo ${{ steps.auto_commit_action.outputs.commit_hash }} >> .git-blame-ignore-revs
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Ignore Revive Fix commit in git blame
+          commit_user_name: GitHub Action
+          commit_user_email: actions@github.com

@@ -51,15 +51,16 @@ class TLint extends Tool
     private function executeCommand(BaseCommand $tlintCommand): bool
     {
         $tlintCommand->config->excluded = [
-            ...$tlintCommand->config->excluded ?? [],
-            ...$this->dusterConfig->get('exclude', []),
+            ...$tlintCommand->config->excluded ??
+        [],
+            ...$this->reviveConfig->get('exclude', []),
         ];
 
         $application = new Application;
         $application->add($tlintCommand);
         $application->setAutoExit(false);
 
-        $errors = collect($this->dusterConfig->get('paths'))
+        $errors = collect($this->reviveConfig->get('paths'))
             ->map(fn ($path) => $this->executeCommandOnPath($path, $application))
             ->filter();
 
