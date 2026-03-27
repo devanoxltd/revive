@@ -14,16 +14,30 @@ class PhpCodeSniffer extends Tool
     {
         $this->heading('Linting using PHP_CodeSniffer');
 
-        return $this->process('runPHPCS', $this->getPaths());
+        if (! $this->hasCustomConfig()) {
+            if (empty($paths = $this->getPaths())) {
+                return 0;
+            }
+        }
+
+        return $this->process('runPHPCS', $paths ?? []);
     }
 
     public function fix(): int
     {
         $this->heading('Fixing using PHP_CodeSniffer');
 
-        $fix = $this->process('runPHPCBF', $this->getPaths());
+        if ($this->hasCustomConfig()) {
+            $paths = [];
+        } else {
+            if (empty($paths = $this->getPaths())) {
+                return 0;
+            }
+        }
 
-        $lint = $this->process('runPHPCS', ['-n', '--report=summary', ...$this->getPaths()]);
+        $fix = $this->process('runPHPCBF', $paths);
+
+        $lint = $this->process('runPHPCS', ['-n', '--report=summary', ...$paths]);
 
         if ($lint !== 0) {
             $this->failure('PHP Code_Sniffer found errors that cannot be fixed automatically.');
@@ -78,12 +92,21 @@ class PhpCodeSniffer extends Tool
      */
     private function getPaths(): array
     {
-        if ($this->getConfigFile() !== 'Tighten') {
-            return [];
-        }
-
-        return $this->dusterConfig->get('paths') === [Project::path()]
+        $paths = $this->dusterConfig->get('paths') === [Project::path()]
             ? $this->getDefaultDirectories() : $this->dusterConfig->get('paths');
+
+        return array_values(array_filter($paths, function ($path) {
+            if (is_dir($path)) {
+                return true;
+            }
+
+            return ! str_ends_with($path, '.blade.php');
+        }));
+    }
+
+    private function hasCustomConfig(): bool
+    {
+        return $this->getConfigFile() !== 'Tighten';
     }
 
     private function installTightenCodingStandard(): void
