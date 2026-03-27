@@ -14,17 +14,13 @@ class PhpCodeSniffer extends Tool
     {
         $this->heading('Linting using PHP_CodeSniffer');
 
-        if ($this->hasCustomConfig()) {
-            $paths = [];
-        } else {
-            $paths = $this->getPaths();
+        if (! $this->hasCustomConfig()) {
+            if (empty($paths = $this->getPaths())) {
+                return 0;
+            }
         }
 
-        if (empty($paths)) {
-            return 0;
-        }
-
-        return $this->process('runPHPCS', $paths);
+        return $this->process('runPHPCS', $paths ?? []);
     }
 
     public function fix(): int
@@ -34,14 +30,12 @@ class PhpCodeSniffer extends Tool
         if ($this->hasCustomConfig()) {
             $paths = [];
         } else {
-            $paths = $this->getPaths();
+            if (empty($paths = $this->getPaths())) {
+                return 0;
+            }
         }
 
-        if (empty($paths)) {
-            return 0;
-        }
-
-        $fix = $this->process('runPHPCBF', $paths);
+        $fix = $this->process('runPHPCBF', $paths ?? []);
 
         $lint = $this->process('runPHPCS', ['-n', '--report=summary', ...$paths]);
 
@@ -57,6 +51,10 @@ class PhpCodeSniffer extends Tool
      */
     private function process(string $tool, array $params = []): int
     {
+        if (empty($params)) {
+            $params = $this->getPaths();
+        }
+
         $serverArgv = $_SERVER['argv'];
 
         if (defined('PHP_CODESNIFFER_CBF') === false) {
@@ -112,7 +110,7 @@ class PhpCodeSniffer extends Tool
 
     private function hasCustomConfig(): bool
     {
-        return $this->getConfigFile() === 'Devanox';
+        return $this->getConfigFile() !== 'Devanox';
     }
 
     private function installDevanoxCodingStandard(): void
