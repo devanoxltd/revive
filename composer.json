@@ -37,6 +37,7 @@
         "laravel-zero/framework": "^12.1",
         "laravel/pint": "^1.29",
         "nunomaduro/termwind": "^2.4",
+        "shipfastlabs/agent-detector": "^1.1",
         "spatie/invade": "^1.1",
         "squizlabs/php_codesniffer": "^4.0",
         "tightenco/tlint": "^9.6"
