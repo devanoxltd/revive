@@ -33,13 +33,13 @@
         "php": "^8.2.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.94",
-        "laravel-zero/framework": "^12.0",
-        "laravel/pint": "^1.27",
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "laravel-zero/framework": "^12.1",
+        "laravel/pint": "^1.29",
         "nunomaduro/termwind": "^2.4",
         "spatie/invade": "^1.1",
         "squizlabs/php_codesniffer": "^4.0",
-        "tightenco/tlint": "^9.5"
+        "tightenco/tlint": "^9.6"
     },
     "autoload": {
         "psr-4": {
