@@ -3,8 +3,8 @@
         "php": "^8.3"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.94.2",
-        "larastan/larastan": "^3.9.3",
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "larastan/larastan": "^3.9",
         "laravel-zero/framework": "^12.1",
         "laravel/pint": "^1.29",
         "mrchetan/php_standard": "^5.3",
@@ -12,11 +12,11 @@
         "nunomaduro/termwind": "^2.4",
         "pestphp/pest": "^4.4.3",
         "phpstan/phpstan": "^2.1.44",
-        "rector/rector": "^2.3.9",
+        "rector/rector": "^2.4",
+        "shipfastlabs/agent-detector": "^1.1",
         "spatie/invade": "^2.1",
         "squizlabs/php_codesniffer": "^4.0.1",
-        "tightenco/tlint": "^9.5",
-        "shipfastlabs/agent-detector": "^1.1"
+        "tightenco/tlint": "^9.6"
     },
     "autoload": {
         "psr-4": {

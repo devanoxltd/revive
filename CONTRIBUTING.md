@@ -40,12 +40,14 @@ COMPOSER=composer-dev.json composer install
 
 To update dependencies to latest:
 
+
+
 ```bash
 # Production
-composer require friendsofphp/php-cs-fixer laravel-zero/framework laravel/pint nunomaduro/termwind larastan/larastan mrchetan/php_standard squizlabs/php_codesniffer tightenco/tlint --dev
+composer require friendsofphp/php-cs-fixer laravel-zero/framework laravel/pint nunomaduro/termwind shipfastlabs/agent-detector larastan/larastan mrchetan/php_standard squizlabs/php_codesniffer tightenco/tlint --dev
 
 # Development
-COMPOSER=composer-dev.json composer require friendsofphp/php-cs-fixer laravel-zero/framework laravel/pint nunomaduro/termwind pestphp/pest rector/rector larastan/larastan mrchetan/php_standard squizlabs/php_codesniffer tightenco/tlint --dev
+COMPOSER=composer-dev.json composer require friendsofphp/php-cs-fixer laravel-zero/framework laravel/pint nunomaduro/termwind pestphp/pest rector/rector shipfastlabs/agent-detector larastan/larastan mrchetan/php_standard squizlabs/php_codesniffer tightenco/tlint --dev
 ```
 
 ## PHPStan

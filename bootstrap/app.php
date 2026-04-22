@@ -1,5 +1,10 @@
 <?php
 
+use App\ReviveKernel;
+use App\Exceptions\HandleExceptions;
+use Illuminate\Contracts\Console\Kernel;
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use Illuminate\Foundation\Exceptions\Handler;
 use LaravelZero\Framework\Application;
 
 /*
@@ -29,18 +34,18 @@ $app = new Application(
 */
 
 $app->singleton(
-    Illuminate\Contracts\Console\Kernel::class,
-    App\ReviveKernel::class
+    Kernel::class,
+    ReviveKernel::class
 );
 
 $app->singleton(
-    Illuminate\Contracts\Debug\ExceptionHandler::class,
-    Illuminate\Foundation\Exceptions\Handler::class
+    ExceptionHandler::class,
+    Handler::class
 );
 
 $app->singleton(
     Illuminate\Foundation\Bootstrap\HandleExceptions::class,
-    App\Exceptions\HandleExceptions::class
+    HandleExceptions::class
 );
 
 /*
