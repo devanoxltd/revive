@@ -33,16 +33,16 @@
         "php": "^8.3"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.95.1",
-        "larastan/larastan": "^3.9.6",
+        "friendsofphp/php-cs-fixer": "^3.95.5",
+        "larastan/larastan": "^3.10.0",
         "laravel-zero/framework": "^12.1",
         "laravel/pint": "^1.29.1",
         "mrchetan/php_standard": "^5.3",
         "nunomaduro/termwind": "^2.4",
-        "shipfastlabs/agent-detector": "^1.1.3",
+        "laravel/agent-detector": "^2.0.2",
         "spatie/invade": "^2.1",
         "squizlabs/php_codesniffer": "^4.0.1",
-        "tightenco/tlint": "^9.6"
+        "tightenco/tlint": "^9.6.1"
     },
     "autoload": {
         "psr-4": {
@@ -59,7 +59,11 @@
         "lint": "./revive lint",
         "fix": "./revive fix",
         "rector-dry-run": "vendor/bin/rector process --dry-run --ansi",
-        "rector": "vendor/bin/rector process --ansi"
+        "rector": "vendor/bin/rector process --ansi",
+        "update:requirements": [
+            "composer bump --dev-only",
+            "COMPOSER=composer-dev.json composer bump --dev-only"
+        ]
     },
     "config": {
         "preferred-install": {

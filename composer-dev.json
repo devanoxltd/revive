@@ -3,20 +3,20 @@
         "php": "^8.3"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.95.1",
-        "larastan/larastan": "^3.9.6",
+        "friendsofphp/php-cs-fixer": "^3.95.5",
+        "larastan/larastan": "^3.10.0",
         "laravel-zero/framework": "^12.1",
         "laravel/pint": "^1.29.1",
         "mrchetan/php_standard": "^5.3",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/termwind": "^2.4",
-        "pestphp/pest": "^4.6.3",
-        "phpstan/phpstan": "^2.1.51",
-        "rector/rector": "^2.4.2",
-        "shipfastlabs/agent-detector": "^1.1.3",
+        "pestphp/pest": "^4.7.3",
+        "phpstan/phpstan": "^2.2.2",
+        "rector/rector": "^2.4.5",
+        "laravel/agent-detector": "^2.0.2",
         "spatie/invade": "^2.1",
         "squizlabs/php_codesniffer": "^4.0.1",
-        "tightenco/tlint": "^9.6"
+        "tightenco/tlint": "^9.6.1"
     },
     "autoload": {
         "psr-4": {
