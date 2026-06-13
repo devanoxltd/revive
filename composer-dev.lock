@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd29c75b7b86d9f907c6069f85b430dc",
+    "content-hash": "f5b416f75fff9070d93a9a565b940e4d",
     "packages": [],
     "packages-dev": [
         {
@@ -3303,68 +3303,6 @@
                 }
             ],
             "time": "2026-03-24T16:33:54+00:00"
-        },
-        {
-            "name": "laravel/agent-detector",
-            "version": "v2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/agent-detector.git",
-                "reference": "90694b9256099591cf9e55d08c18ba7a00bf099f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/agent-detector/zipball/90694b9256099591cf9e55d08c18ba7a00bf099f",
-                "reference": "90694b9256099591cf9e55d08c18ba7a00bf099f",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.2.0"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.24.0",
-                "pestphp/pest": "^3.8.5|^4.1.0",
-                "pestphp/pest-plugin-type-coverage": "^3.0|^4.0.2",
-                "phpstan/phpstan": "^2.1.26",
-                "rector/rector": "^2.1.7",
-                "symfony/var-dumper": "^7.3.3"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/functions.php"
-                ],
-                "psr-4": {
-                    "Laravel\\AgentDetector\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Detect if code is running in an AI agent or automated development environment",
-            "homepage": "https://github.com/laravel/agent-detector",
-            "keywords": [
-                "Agent",
-                "ai",
-                "automation",
-                "claude",
-                "cursor",
-                "detection",
-                "devin",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel/agent-detector/issues",
-                "source": "https://github.com/laravel/agent-detector"
-            },
-            "time": "2026-04-29T18:32:34+00:00"
         },
         {
             "name": "laravel/pint",
@@ -7893,6 +7831,74 @@
                 }
             ],
             "time": "2025-02-07T05:00:38+00:00"
+        },
+        {
+            "name": "shipfastlabs/agent-detector",
+            "version": "v1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/agent-detector.git",
+                "reference": "7719ba7ebbed18911494467139c389549ed53467"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/agent-detector/zipball/7719ba7ebbed18911494467139c389549ed53467",
+                "reference": "7719ba7ebbed18911494467139c389549ed53467",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.24.0",
+                "pestphp/pest": "^3.8.5|^4.1.0",
+                "pestphp/pest-plugin-type-coverage": "^3.0|^4.0.2",
+                "phpstan/phpstan": "^2.1.26",
+                "rector/rector": "^2.1.7",
+                "symfony/var-dumper": "^7.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "AgentDetector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pushpak Chahjed",
+                    "email": "pushpak1300@gmail.com"
+                }
+            ],
+            "description": "Detect if code is running in an AI agent or automated development environment",
+            "keywords": [
+                "Agent",
+                "ai",
+                "automation",
+                "claude",
+                "cursor",
+                "detection",
+                "devin",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/agent-detector/issues",
+                "source": "https://github.com/laravel/agent-detector/tree/v1.1.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/pushpak1300",
+                    "type": "github"
+                }
+            ],
+            "abandoned": "laravel/agent-detector",
+            "time": "2026-04-26T17:43:21+00:00"
         },
         {
             "name": "spatie/invade",

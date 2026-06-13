@@ -39,7 +39,7 @@
         "laravel/pint": "^1.29.1",
         "mrchetan/php_standard": "^5.3",
         "nunomaduro/termwind": "^2.4",
-        "laravel/agent-detector": "^2.0.2",
+        "shipfastlabs/agent-detector": "^1.1.4",
         "spatie/invade": "^2.1",
         "squizlabs/php_codesniffer": "^4.0.1",
         "tightenco/tlint": "^9.6.1"
