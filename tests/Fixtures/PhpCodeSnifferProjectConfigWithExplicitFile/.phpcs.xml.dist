@@ -2,7 +2,5 @@
 <ruleset>
     <file>BadClass.php</file>
 
-    <rule ref="Tighten"/>
-
     <rule ref="Generic.Commenting.Todo"/>
 </ruleset>
