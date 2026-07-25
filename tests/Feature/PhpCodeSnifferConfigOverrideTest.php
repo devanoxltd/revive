@@ -43,3 +43,17 @@ it('falls back to ruleset file directives when the explicit path is the project 
         ->toContain('Linting using PHP_CodeSniffer')
         ->toContain('Comment refers to a TODO task');
 });
+
+it('lints default directories when only a vendor ruleset exists', function () {
+    chdir(__DIR__ . '/../Fixtures/PhpCodeSnifferVendorRulesetNoFile');
+
+    [$statusCode, $output] = run('lint', [
+        'path' => base_path('tests/Fixtures/PhpCodeSnifferVendorRulesetNoFile'),
+        '--using' => 'phpcs',
+    ]);
+
+    expect($statusCode)->toBe(0)
+        ->and($output)
+        ->toContain('Linting using PHP_CodeSniffer')
+        ->not->toContain('You must supply at least one file or directory to process.');
+});

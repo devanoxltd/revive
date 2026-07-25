@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ruleset name="Fixture">
+    <description>Fixture ruleset without file directives.</description>
+    <rule ref="PSR12"/>
+</ruleset>

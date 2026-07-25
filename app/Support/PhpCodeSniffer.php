@@ -139,7 +139,12 @@ class PhpCodeSniffer extends Tool
 
     private function hasCustomConfig(): bool
     {
-        return $this->getConfigFile() !== 'Devanox';
+        return in_array($this->getConfigFile(), [
+            Project::path() . '/.phpcs.xml',
+            Project::path() . '/phpcs.xml',
+            Project::path() . '/.phpcs.xml.dist',
+            Project::path() . '/phpcs.xml.dist',
+        ], true);
     }
 
     private function installDevanoxCodingStandard(): void
