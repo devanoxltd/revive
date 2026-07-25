@@ -49,10 +49,6 @@ class PhpCodeSniffer extends Tool
      */
     private function process(string $tool, array $params = []): int
     {
-        if (empty($params)) {
-            $params = $this->getPaths();
-        }
-
         $serverArgv = $_SERVER['argv'];
 
         if (defined('PHP_CODESNIFFER_CBF') === false) {
