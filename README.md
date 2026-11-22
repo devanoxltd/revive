@@ -165,7 +165,7 @@ Create a `pint.json` file in your project root, you can use [Revive's `pint.json
 
 ## GitHub Action
 
-There's a [GitHub Action](https://github.com/devanoxltd/revive-action) you use to clean-up your workflows.
+Run `./vendor/bin/revive github-actions` to publish a workflow to `.github/workflows`. The workflow installs your Composer dependencies and runs the Revive version from your project.
 
 >**Warning** Heads Up! Workflows that commit to your repo will stop any currently running workflows and not trigger another workflow run.
 
