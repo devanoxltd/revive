@@ -7,7 +7,7 @@
         "larastan/larastan": "^3.15",
         "laravel-zero/framework": "^12.1",
         "laravel/agent-detector": "^2.0",
-        "laravel/pint": "^1.30",
+        "laravel/pint": "^1.32",
         "mrchetan/php_standard": "^5.3",
         "mockery/mockery": "^1.6",
         "nunomaduro/termwind": "^2.4",
@@ -15,7 +15,7 @@
         "rector/rector": "^2.8",
         "spatie/laravel-ray": "^1.43",
         "pestphp/pest": "^4.7",
-        "spatie/invade": "^2.1",
+        "spatie/invade": "^2.2",
         "squizlabs/php_codesniffer": "^4.0",
         "tightenco/tlint": "^9.7"
     },
