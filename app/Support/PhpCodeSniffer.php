@@ -58,8 +58,10 @@ class PhpCodeSniffer extends Tool
         $cwd = str_replace('\\', '/', getcwd());
 
         $ignore = $this->reviveConfig->get('exclude')
-            ? ['--ignore=' . implode(',',
-                array_map(fn ($path) => str_contains($path, $cwd) ? $path : $cwd . '/*' . $path, $this->reviveConfig->get('exclude')))]
+            ? [
+                '--ignore=' . implode(',',
+                    array_map(fn ($path) => str_contains($path, $cwd) ? $path : $cwd . '/*' . $path, $this->reviveConfig->get('exclude'))),
+            ]
             : [];
 
         $_SERVER['argv'] = [
